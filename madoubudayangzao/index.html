@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>麻豆不打烊早知道设计-夜间档更新与选题观察站</title>
+<meta name="description" content="麻豆不打烊早知道设计聚焦夜间更新节奏、选题拆解与界面设计观察。整理每周档期变化、条目版本差异、观众反馈与可核对时间线，给出能直接拿去比对的判断，帮你在深夜档里快速找到值得看的条目。">
+<meta name="keywords" content="麻豆不打烊早知道设计">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1f2a'/%3E%3Ccircle cx='32' cy='34' r='15' fill='none' stroke='%23ffb648' stroke-width='4'/%3E%3Cpath d='M32 12v8M32 48v8M10 34h8M46 34h8' stroke='%23ffb648' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0f1218;
+  --bg-soft:#151a23;
+  --panel:#1b2130;
+  --panel-2:#212938;
+  --line:#2c3546;
+  --line-soft:#232b3a;
+  --ink:#e8ecf3;
+  --ink-2:#b6c0d0;
+  --ink-3:#8792a5;
+  --brand:#ffb648;
+  --brand-2:#ff8a3d;
+  --cool:#5ec8c0;
+  --pink:#f0709a;
+  --radius:14px;
+  --radius-sm:9px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  --announce-h:42px;
+  --head-h:64px;
+  --gap:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--announce-h) + var(--head-h) + 12px)}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--font);font-size:16px;line-height:1.78;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--cool);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-left:1.15em}
+li{margin-bottom:6px}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:4px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.skip{position:absolute;left:-9999px;top:0;background:var(--brand);color:#111;padding:8px 14px;z-index:99}
+.skip:focus{left:8px;top:8px;color:#111}
+
+/* ===== 吸顶公告 + 页头 ===== */
+.sticky-zone{position:sticky;top:0;z-index:60}
+.announce{
+  height:var(--announce-h);display:flex;align-items:center;
+  background:linear-gradient(90deg,#2a1c0c,#3a2410 45%,#1b2130);
+  border-bottom:1px solid #4a3520;
+  font-size:13.5px;color:#ffd9a6;overflow:hidden;
+}
+.announce .wrap{display:flex;gap:12px;align-items:center;white-space:nowrap;overflow:hidden}
+.announce .tag{
+  flex:0 0 auto;background:var(--brand);color:#1a1206;font-weight:700;
+  border-radius:4px;padding:1px 7px;font-size:12px;letter-spacing:.5px;
+}
+.announce .roll{overflow:hidden;text-overflow:ellipsis}
+.announce a{color:#ffe6c2;text-decoration:underline;text-underline-offset:3px}
+
+.site-head{
+  height:var(--head-h);background:rgba(15,18,24,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.site-head .wrap{height:100%;display:flex;align-items:center;gap:22px}
+.brand{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.brand .mark{width:34px;height:34px;flex:0 0 auto}
+.brand .name{font-weight:800;font-size:17px;letter-spacing:.5px;color:var(--ink)}
+.brand:hover{text-decoration:none}
+.main-nav{display:flex;gap:4px;flex:1 1 auto;min-width:0;overflow:auto;scrollbar-width:none}
+.main-nav::-webkit-scrollbar{display:none}
+.main-nav a{
+  color:var(--ink-2);font-size:14.5px;padding:7px 11px;border-radius:8px;white-space:nowrap;
+}
+.main-nav a:hover{background:var(--panel);color:var(--ink);text-decoration:none}
+.main-nav a.active{background:#2a2418;color:var(--brand)}
+.head-tools{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.search{display:flex;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:2px 4px 2px 10px}
+.search input{
+  background:transparent;border:0;color:var(--ink);font-size:14px;width:132px;padding:6px 0;font-family:inherit;
+}
+.search input::placeholder{color:var(--ink-3)}
+.search input:focus{outline:none}
+.search button{
+  background:var(--brand);color:#1a1206;border:0;border-radius:6px;
+  padding:5px 11px;font-size:13.5px;font-weight:700;cursor:pointer;
+}
+.menu-btn{display:none;background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:7px 10px;cursor:pointer;font-size:14px}
+.search-note{font-size:13px;color:var(--pink);padding:0 0 4px}
+
+@media (max-width:900px){
+  .main-nav{
+    position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;
+    background:var(--bg-soft);border-bottom:1px solid var(--line);padding:10px 16px 14px;gap:2px;
+  }
+  .main-nav.open{display:flex}
+  .menu-btn{display:inline-block}
+  .site-head .wrap{gap:12px}
+  .search input{width:96px}
+  .brand .name{font-size:15.5px}
+}
+@media (max-width:520px){
+  .search{display:none}
+  .brand .name{font-size:14.5px}
+}
+
+/* ===== 首屏 ===== */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:radial-gradient(900px 340px at 78% -10%,rgba(255,182,72,.16),transparent 62%),linear-gradient(180deg,#141a24,#0f1218)}
+.hero .wrap{position:relative;padding:52px 0 44px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--brand);border:1px solid #4a3520;background:#221a10;border-radius:999px;padding:3px 12px;margin-bottom:16px;letter-spacing:.4px}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--brand);display:block;animation:pulse 2.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero h1{font-size:clamp(30px,4.4vw,46px);letter-spacing:1px;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero .lede{color:var(--ink-2);font-size:16.5px;max-width:34em;margin-bottom:22px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.btn{
+  display:inline-block;padding:10px 20px;border-radius:10px;font-size:15px;font-weight:700;
+  transition:transform .18s ease, background .18s ease;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#1a1206}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);background:var(--panel)}
+.hero-stats{display:flex;gap:26px;flex-wrap:wrap}
+.hero-stats div{font-size:13px;color:var(--ink-3)}
+.hero-stats b{display:block;font-size:22px;color:var(--ink);line-height:1.2;font-variant-numeric:tabular-nums}
+.hero-art{position:relative;min-height:290px}
+.hero-art svg{width:100%;height:auto;display:block}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;padding:36px 0 32px;gap:26px}
+  .hero-art{min-height:0;max-width:430px}
+}
+
+/* ===== 主体布局 ===== */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 306px;gap:34px;padding:40px 0 10px;align-items:start}
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr;gap:26px}
+  .side{order:2}
+  .main{order:1}
+}
+
+section.block{margin-bottom:46px;scroll-margin-top:calc(var(--announce-h) + var(--head-h) + 14px)}
+.block-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:16px;border-bottom:1px solid var(--line-soft);padding-bottom:10px}
+.block-head h2{font-size:22px;letter-spacing:.4px}
+.block-head h2 span{font-size:13px;color:var(--ink-3);font-weight:400;margin-left:10px;letter-spacing:0}
+.block-head .more{font-size:13.5px;color:var(--ink-3);white-space:nowrap}
+.block-head .more:hover{color:var(--brand)}
+.kicker{font-size:13px;color:var(--brand);margin-bottom:6px}
+
+/* 概览 */
+.overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ov-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 15px}
+.ov-card b{display:block;font-size:23px;color:var(--brand);font-variant-numeric:tabular-nums}
+.ov-card span{font-size:13px;color:var(--ink-3)}
+.ov-card p{margin:6px 0 0;font-size:13px;color:var(--ink-2)}
+@media (max-width:700px){.overview-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* 精选卡片 */
+.pick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
+@media (max-width:640px){.pick-grid{grid-template-columns:1fr}}
+.pick{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.pick:hover{border-color:#3b4760}
+.pick .thumb{aspect-ratio:16/9;overflow:hidden;background:#0c0f14}
+.pick .thumb img{width:100%;height:100%;object-fit:cover}
+.pick .body{padding:14px 16px 16px}
+.pick h3{font-size:17px;margin-bottom:6px}
+.pick .meta{font-size:12.5px;color:var(--ink-3);margin-bottom:8px;display:flex;gap:10px;flex-wrap:wrap}
+.pick p{font-size:14px;color:var(--ink-2);margin:0}
+.pick .pill{display:inline-block;background:#2a2418;color:var(--brand);border-radius:5px;font-size:12px;padding:1px 7px;margin-bottom:8px}
+
+/* 列表 */
+.tight-list{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--panel)}
+.tight-list li{list-style:none}
+.tl-row{display:grid;grid-template-columns:78px 1fr auto;gap:14px;align-items:baseline;padding:12px 16px;border-bottom:1px solid var(--line-soft)}
+.tl-row:last-child{border-bottom:0}
+.tl-row time{font-size:13px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.tl-row .t{font-size:15px}
+.tl-row .t a{color:var(--ink)}
+.tl-row .t a:hover{color:var(--brand)}
+.tl-row .t small{display:block;color:var(--ink-3);font-size:12.5px;margin-top:3px}
+.tl-row .tagx{font-size:12px;color:var(--cool);border:1px solid #2c4a4a;background:#132425;border-radius:5px;padding:1px 7px;white-space:nowrap}
+@media (max-width:600px){.tl-row{grid-template-columns:60px 1fr}.tl-row .tagx{display:none}}
+
+/* 分类索引 */
+.cat-index{display:flex;flex-wrap:wrap;gap:9px}
+.cat-index a{
+  display:inline-flex;align-items:baseline;gap:7px;background:var(--panel);border:1px solid var(--line);
+  border-radius:999px;padding:7px 15px;font-size:14px;color:var(--ink-2);
+}
+.cat-index a:hover{border-color:var(--brand);color:var(--brand);text-decoration:none}
+.cat-index a em{font-style:normal;font-size:12px;color:var(--ink-3)}
+
+/* 深度解析 */
+.feature{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;box-shadow:var(--shadow);
+}
+.feature h2{font-size:24px;margin-bottom:8px}
+.feature .standfirst{color:var(--ink-2);font-size:15px;border-left:3px solid var(--brand);padding-left:14px;margin:14px 0 20px}
+.feature h3{font-size:17.5px;margin:24px 0 8px;color:#ffd9a6}
+.feature p{font-size:15px;color:var(--ink-2)}
+.feature p b{color:var(--ink)}
+.claim{
+  background:#191e29;border:1px dashed #4a3520;border-radius:var(--radius-sm);
+  padding:14px 16px;margin:16px 0;font-size:14.5px;color:#ffe0b8;
+}
+.claim strong{color:var(--brand)}
+table.cmp{width:100%;border-collapse:collapse;font-size:13.8px;margin:12px 0 16px}
+table.cmp caption{caption-side:top;text-align:left;color:var(--ink-3);font-size:12.5px;padding-bottom:6px}
+table.cmp th,table.cmp td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+table.cmp th{background:#1f2532;color:var(--ink);font-weight:700;white-space:nowrap}
+table.cmp td{color:var(--ink-2)}
+@media (max-width:600px){
+  .feature{padding:18px 16px}
+  table.cmp{display:block;overflow-x:auto}
+}
+
+/* 体验指南 步骤 */
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;gap:12px}
+.steps li{
+  counter-increment:s;position:relative;background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-sm);padding:14px 16px 14px 56px;font-size:14.5px;color:var(--ink-2);margin:0;
+}
+.steps li::before{
+  content:counter(s);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:8px;
+  background:#2a2418;color:var(--brand);display:grid;place-items:center;font-weight:700;font-size:14px;
+}
+.steps li b{color:var(--ink)}
+
+/* FAQ */
+details.faq{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:10px;overflow:hidden}
+details.faq summary{
+  cursor:pointer;padding:13px 44px 13px 16px;font-size:15px;font-weight:700;position:relative;list-style:none;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{
+  content:"+";position:absolute;right:16px;top:11px;color:var(--brand);font-size:19px;font-weight:400;
+}
+details.faq[open] summary::after{content:"–"}
+details.faq[open] summary{border-bottom:1px solid var(--line-soft)}
+details.faq .ans{padding:12px 16px 15px;font-size:14.5px;color:var(--ink-2)}
+details.faq .ans p:last-child{margin-bottom:0}
+
+/* 评论 */
+.reviews{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
+@media (max-width:700px){.reviews{grid-template-columns:1fr}}
+.review{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.review .who{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.review .av{width:28px;height:28px;border-radius:50%;background:#2a2418;color:var(--brand);display:grid;place-items:center;font-size:12.5px;font-weight:700}
+.review .who b{font-size:14px;font-weight:700}
+.review .who em{font-style:normal;font-size:12px;color:var(--ink-3)}
+.review p{font-size:14px;color:var(--ink-2);margin:0}
+.review.neg{border-color:#4a2a33}
+.review.neg .av{background:#2c1a20;color:var(--pink)}
+
+/* 资讯 + 推荐 标签 */
+.news-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:700px){.news-grid{grid-template-columns:1fr}}
+.news{display:grid;grid-template-columns:96px 1fr;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px;align-items:center}
+.news img{width:96px;height:72px;object-fit:cover;border-radius:7px}
+.news h3{font-size:14.5px;margin-bottom:3px}
+.news span{font-size:12.5px;color:var(--ink-3)}
+.news p{font-size:13px;color:var(--ink-2);margin:3px 0 0}
+
+.tags{display:flex;flex-wrap:wrap;gap:9px}
+.tags a{background:#191e29;border:1px solid var(--line);border-radius:7px;padding:6px 12px;font-size:13.5px;color:var(--ink-2)}
+.tags a:hover{border-color:var(--cool);color:var(--cool);text-decoration:none}
+
+/* 榜单 */
+.rank{counter-reset:r;list-style:none;padding:0;display:grid;gap:8px}
+.rank li{
+  counter-increment:r;display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:11px 14px;margin:0;
+}
+.rank li::before{content:counter(r);color:var(--brand);font-weight:800;font-size:16px;text-align:center}
+.rank li .nm{font-size:14.5px;color:var(--ink)}
+.rank li .nm small{display:block;font-size:12.5px;color:var(--ink-3);margin-top:2px}
+.rank li .sc{font-size:13px;color:var(--cool);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* 时间线 */
+.timeline{list-style:none;padding:0 0 0 18px;border-left:2px solid var(--line);margin:0}
+.timeline li{position:relative;margin-bottom:16px;padding-left:6px;font-size:14.5px;color:var(--ink-2)}
+.timeline li::before{content:"";position:absolute;left:-24px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--brand);border:2px solid var(--bg)}
+.timeline time{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:2px}
+.timeline b{color:var(--ink)}
+
+/* 评论区互动 */
+.reflect{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.reflect h2{font-size:19px;margin-bottom:8px}
+.reflect form{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.reflect label{font-size:13px;color:var(--ink-3);display:block;margin-bottom:4px}
+.reflect input,.reflect textarea{
+  width:100%;background:#151a23;border:1px solid var(--line);border-radius:8px;color:var(--ink);
+  font-size:14px;padding:9px 11px;font-family:inherit;
+}
+.reflect .f1{flex:1 1 150px}
+.reflect .f2{flex:1 1 100%}
+.reflect button{
+  background:var(--brand);color:#1a1206;border:0;border-radius:8px;padding:9px 20px;font-weight:700;font-size:14px;cursor:pointer;
+}
+.form-msg{font-size:13.5px;color:var(--cool);margin-top:8px;min-height:18px}
+
+/* 侧栏 */
+.side{display:grid;gap:18px;position:sticky;top:calc(var(--announce-h) + var(--head-h) + 16px)}
+@media (max-width:960px){.side{position:static}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.panel h2{font-size:15px;letter-spacing:.4px;margin-bottom:10px;color:var(--ink);display:flex;align-items:center;gap:8px}
+.panel h2::before{content:"";width:3px;height:14px;background:var(--brand);border-radius:2px;display:block}
+.side-nav{list-style:none;padding:0;margin:0;display:grid;gap:2px}
+.side-nav a{display:block;font-size:14px;color:var(--ink-2);padding:6px 10px;border-radius:7px;border-left:2px solid transparent}
+.side-nav a:hover{background:#1f2532;color:var(--ink);text-decoration:none}
+.side-nav a.active{color:var(--brand);background:#221a10;border-left-color:var(--brand)}
+.mini-news{list-style:none;padding:0;margin:0;font-size:13.5px}
+.mini-news li{padding:8px 0;border-bottom:1px solid var(--line-soft);color:var(--ink-2);margin:0}
+.mini-news li:last-child{border-bottom:0;padding-bottom:0}
+.mini-news time{display:block;font-size:12px;color:var(--ink-3)}
+.quotebox{font-size:14px;color:var(--ink-2);border-left:3px solid var(--cool);padding-left:12px;margin:0}
+.quotebox cite{display:block;margin-top:6px;font-style:normal;font-size:12.5px;color:var(--ink-3)}
+
+/* 页尾 */
+.site-foot{border-top:1px solid var(--line);background:#0b0e13;margin-top:30px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px;padding:36px 0 26px}
+@media (max-width:860px){.foot-top{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.foot-top{grid-template-columns:1fr}}
+.foot-brand .brand{margin-bottom:10px}
+.foot-brand p{font-size:13.5px;color:var(--ink-3);margin:0}
+.foot-col h3{font-size:14px;margin-bottom:10px;color:var(--ink)}
+.foot-col ul{list-style:none;padding:0;margin:0;font-size:13.5px}
+.foot-col li{margin-bottom:7px}
+.foot-col a{color:var(--ink-3)}
+.foot-col a:hover{color:var(--brand)}
+.foot-note{
+  border-top:1px solid var(--line-soft);padding:14px 0 22px;font-size:12.5px;color:var(--ink-3);
+  display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;
+}
+
+/* 回到顶部 */
+#toTop{
+  position:fixed;right:18px;bottom:22px;z-index:80;display:none;
+  background:var(--brand);color:#1a1206;border:0;border-radius:10px;
+  padding:10px 13px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:var(--shadow);
+}
+#toTop.show{display:block}
+@media (max-width:520px){#toTop{right:12px;bottom:14px;padding:8px 11px;font-size:13px}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<div class="sticky-zone">
+  <div class="announce" role="region" aria-label="更新公告">
+    <div class="wrap">
+      <span class="tag">档期</span>
+      <span class="roll">今天 11-08 凌晨 01:20 更新：<a href="/#latest">深夜档排期表 v11.08</a> 已换上第 41 期，新增两条撤档说明；<a href="/#deep">深度解析</a>补入 11-06 的版本差异记录。</span>
+    </div>
+  </div>
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="/#hero" aria-label="回到首页顶部">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#1b2130"/>
+          <circle cx="32" cy="34" r="15" fill="none" stroke="#ffb648" stroke-width="4"/>
+          <path d="M32 12v8M32 48v8M10 34h8M46 34h8" stroke="#ffb648" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="32" cy="34" r="4" fill="#ff8a3d"/>
+        </svg>
+        <span class="name">麻豆不打烊早知道设计</span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="主题频道">
+        <a href="/#overview">档期总览</a>
+        <a href="/#picks">深夜精选</a>
+        <a href="/#latest">更新记录</a>
+        <a href="/#cats">选题分类</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">观看指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#reviews">观众评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#rank">本周榜单</a>
+      </nav>
+      <div class="head-tools">
+        <div class="search" role="search">
+          <label for="q" class="skip">站内搜索</label>
+          <input id="q" type="search" placeholder="搜条目 / 档期 / 标签" autocomplete="off">
+          <button type="button" id="qBtn">查</button>
+        </div>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">频道</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="main">
+  <section class="hero" id="hero" aria-label="首屏">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow"><i></i>夜间档 · 第 41 期排期已上线</span>
+        <h1>麻豆不打烊早知道设计</h1>
+        <p class="lede">盯着凌晨 0 点到 3 点的档期表、条目版本号和封面改稿记录做拆解。这里不做泛泛推荐，只把“哪一期换了剪辑、哪一条撤了档、哪个分类最近上新密度变高”摊开讲清楚，方便你在深夜开播前五分钟做完筛选。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#latest">看今天更新记录</a>
+          <a class="btn btn-ghost" href="/#deep">读本期深度解析</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>41</b>期排期归档</div>
+          <div><b>126</b>条已登记条目</div>
+          <div><b>9</b>个选题分类</div>
+          <div><b>11-08</b>最近一次校对</div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 320" role="img" aria-label="夜间档期钟面与排期卡片示意图">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffb648" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#ff8a3d" stop-opacity=".15"/>
+            </linearGradient>
+          </defs>
+          <rect x="8" y="8" width="404" height="304" rx="22" fill="#151a23" stroke="#2c3546" stroke-width="1.5"/>
+          <circle cx="150" cy="158" r="88" fill="none" stroke="#2c3546" stroke-width="2"/>
+          <circle cx="150" cy="158" r="72" fill="none" stroke="url(#g1)" stroke-width="3" stroke-dasharray="10 7"/>
+          <path d="M150 158 L150 96" stroke="#ffb648" stroke-width="5" stroke-linecap="round"/>
+          <path d="M150 158 L196 176" stroke="#5ec8c0" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="150" cy="158" r="7" fill="#ff8a3d"/>
+          <text x="150" y="264" text-anchor="middle" font-size="13" fill="#8792a5" font-family="sans-serif">00:00 — 03:00 深夜档</text>
+          <g font-family="sans-serif">
+            <rect x="262" y="54" width="122" height="46" rx="9" fill="#1b2130" stroke="#2c3546"/>
+            <rect x="272" y="66" width="52" height="6" rx="3" fill="#ffb648" opacity=".85"/>
+            <rect x="272" y="80" width="86" height="6" rx="3" fill="#3b4760"/>
+            <rect x="262" y="112" width="122" height="46" rx="9" fill="#1b2130" stroke="#2c3546"/>
+            <rect x="272" y="124" width="70" height="6" rx="3" fill="#5ec8c0" opacity=".85"/>
+            <rect x="272" y="138" width="60" height="6" rx="3" fill="#3b4760"/>
+            <rect x="262" y="170" width="122" height="46" rx="9" fill="#1b2130" stroke="#2c3546"/>
+            <rect x="272" y="182" width="42" height="6" rx="3" fill="#f0709a" opacity=".8"/>
+            <rect x="272" y="196" width="94" height="6" rx="3" fill="#3b4760"/>
+            <rect x="262" y="228" width="122" height="46" rx="9" fill="#1b2130" stroke="#2c3546"/>
+            <rect x="272" y="240" width="62" height="6" rx="3" fill="#ffb648" opacity=".6"/>
+            <rect x="272" y="254" width="78" height="6" rx="3" fill="#3b4760"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+    <div class="main">
+
+      <section class="block" id="overview">
+        <div class="block-head">
+          <h2>档期总览<span>11-08 校对，统计口径为登记条目</span></h2>
+          <a class="more" href="/#latest">查看更新记录 →</a>
+        </div>
+        <div class="overview-grid">
+          <div class="ov-card"><b>17</b><span>本周新登记</span><p>集中在“短剧向剪辑”与“竖屏群像”两类。</p></div>
+          <div class="ov-card"><b>4</b><span>撤档或延期</span><p>11-03 至 11-07 之间，均有说明条。</p></div>
+          <div class="ov-card"><b>2.6</b><span>平均改稿次数</span><p>封面更换与片头微调算一次改稿。</p></div>
+          <div class="ov-card"><b>9</b><span>在编选题分类</span><p>比 10 月少了“长镜头实验”一类。</p></div>
+        </div>
+        <p style="margin-top:14px;font-size:14.5px;color:var(--ink-2)">统计来自排期表 v11.08、封面留档以及 11-01 至 11-07 的观众回帖。数字每周日重排一次，改稿次数取登记值，不把字幕微调计入。凌晨档的“不打烊”并不等于全天滚动，实际集中在 00:10、01:20、02:30 三个时间点，这一点在<a href="/#deep">深度解析</a>里有逐条时间对照。</p>
+      </section>
+
+      <section class="block" id="picks">
+        <div class="block-head">
+          <h2>深夜精选条目<span>按 11-08 前的可回看状态筛选</span></h2>
+          <a class="more" href="/#rank">对比本周榜单 →</a>
+        </div>
+        <div class="pick-grid">
+          <article class="pick">
+            <div class="thumb"><img src="https://picsum.photos/seed/madou-night41/640/360" width="640" height="360" loading="lazy" alt="夜间街道灯光下的排期卡片摆拍示意图"></div>
+            <div class="body">
+              <span class="pill">竖屏群像</span>
+              <h3>凌晨一点的群像收束</h3>
+              <div class="meta"><span>第 41 期</span><span>11-06 上线</span><span>改稿 3 次</span></div>
+              <p>封面从三人并排换成侧向构图，片头缩短 4 秒。登记备注写明“原第 3 镜调序”，与 10-29 的旧版差异可对照。</p>
+            </div>
+          </article>
+          <article class="pick">
+            <div class="thumb"><img src="https://picsum.photos/seed/madou-late-list/640/360" width="640" height="360" loading="lazy" alt="深夜书桌上翻开的排期手账与笔"></div>
+            <div class="body">
+              <span class="pill">短剧向剪辑</span>
+              <h3>29 分钟版与 34 分钟版</h3>
+              <div class="meta"><span>第 39 期</span><span>10-31 上线</span><span>两版并存</span></div>
+              <p>两个版本差别集中在 12 分与 21 分处的过场。排期表标注“长版仅夜间开放”，白天入口不显示。</p>
+            </div>
+          </article>
+          <article class="pick">
+            <div class="thumb"><img src="https://picsum.photos/seed/madou-coverfix/640/360" width="640" height="360" loading="lazy" alt="并列摆放的几张封面草图与色卡"></div>
+            <div class="body">
+              <span class="pill">封面改稿</span>
+              <h3>封面换色那次到底改了什么</h3>
+              <div class="meta"><span>第 38 期</span><span>11-02 复核</span><span>改稿 2 次</span></div>
+              <p>底色由冷蓝改为暖橙，主标题字号从 44 降到 36。改后夜间的点击登记量从 312 升到 407，理由写得比结论保守。</p>
+            </div>
+          </article>
+          <article class="pick">
+            <div class="thumb"><img src="https://picsum.photos/seed/madou-timeline/640/360" width="640" height="360" loading="lazy" alt="白板上的时间轴与彩色便利贴"></div>
+            <div class="body">
+              <span class="pill">档期时间线</span>
+              <h3>三周排期被挪动的顺序</h3>
+              <div class="meta"><span>10-12 至 11-05</span><span>涉 6 条</span><span>4 条已说明</span></div>
+              <p>10-19 那条从周四挪到周六，备注只写“技术复核”。剩下两条至今没给理由，懂行的人在意这个缺口。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="block" id="latest">
+        <div class="block-head">
+          <h2>最新更新记录<span>11-01 至 11-08</span></h2>
+          <a class="more" href="/#overview">回到档期总览 →</a>
+        </div>
+        <ul class="tight-list">
+          <li class="tl-row"><time>今天 01:20</time><span class="t"><a href="/#deep">排期表 v11.08 上线</a><small>第 41 期归档，新增两条撤档说明，改稿计数口径改为“登记值”。</small></span><span class="tagx">排期</span></li>
+          <li class="tl-row"><time>昨天 22:40</time><span class="t"><a href="/#picks">第 39 期长版重新开放</a><small>34 分钟版夜间入口恢复，白天入口仍不显示。</small></span><span class="tagx">版本</span></li>
+          <li class="tl-row"><time>11-06 23:15</time><span class="t"><a href="/#news">封面改稿说明补齐</a><small>第 38 期补上 11-02 的换色理由，登记人署名“排期组”。</small></span><span class="tagx">改稿</span></li>
+          <li class="tl-row"><time>11-05 21:05</time><span class="t"><a href="/#reviews">观众回帖汇总第 41 批</a><small>共 64 条，其中 23 条指向具体条目的剪辑节奏。</small></span><span class="tagx">反馈</span></li>
+          <li class="tl-row"><time>11-03 00:50</time><span class="t"><a href="/#cats">选题分类并掉一类</a><small>“长镜头实验”并入“短剧向剪辑”，影响 7 条历史记录。</small></span><span class="tagx">分类</span></li>
+          <li class="tl-row"><time>11-01 23:30</time><span class="t"><a href="/#rank">10 月榜单封存</a><small>榜单按夜间点击登记量排序，不看总播放。</small></span><span class="tagx">榜单</span></li>
+        </ul>
+      </section>
+
+      <section class="block" id="cats">
+        <div class="block-head">
+          <h2>选题分类入口<span>点开看各分类的在编条目</span></h2>
+          <span class="more">9 类 · 126 条</span>
+        </div>
+        <div class="cat-index">
+          <a href="/#picks">竖屏群像 <em>31</em></a>
+          <a href="/#picks">短剧向剪辑 <em>24</em></a>
+          <a href="/#deep">封面改稿 <em>18</em></a>
+          <a href="/#news">档期时间线 <em>15</em></a>
+          <a href="/#guide">深夜观看指南 <em>12</em></a>
+          <a href="/#reviews">观众回帖 <em>10</em></a>
+          <a href="/#rank">夜间点击榜单 <em>8</em></a>
+          <a href="/#faq">档期常见问答 <em>5</em></a>
+          <a href="/#latest">撤档与延期 <em>3</em></a>
+        </div>
+        <p style="margin-top:14px;font-size:14.5px;color:var(--ink-2)">分类名按搜索习惯改过两轮。“群像”保留，“实验”删掉，因为 10 月只有 3 条落在该词下，命名过度细分反而不好找。竖屏群像的 31 条里有 6 条同时挂着短剧向剪辑标签，归类时按首播版本算，不按回看版本算。</p>
+      </section>
+
+      <section class="block feature" id="deep">
+        <h2>深度解析：深夜档的“不打烊”更像三个固定闸口</h2>
+        <p class="standfirst">把 41 期排期按上线时间排开，能看到一个很稳的形状：00:10、01:20、02:30 三个时间点集中了 78% 的新条目。其余时间零星补位。说“全天滚动”是误读，说“只有三个时段”也不准确。</p>
+
+        <h3>一、时间分布：三个闸口撑住了 78%，但这个比例在收窄</h3>
+        <p>排期表 v11.08 的 126 条登记里，落在 00:10 的有 42 条，01:20 有 31 条，02:30 有 25 条，合计 98 条。10 月同口径是 80.5%，11 月前七天降到 78%。变化来自 11-04 起试行的“分段上线”：第 40 期拆成 00:40 与 02:50 两段放。</p>
+        <div class="claim"><strong>可反驳的判断：</strong>三个闸口是排期惯性，也是审核节奏的产物，不是观众行为决定的。如果只按观看时段做排期，00:10 的集中度不会这么高——凌晨 1 点后的回帖量其实比 00:10 段多出 19%（回帖汇总第 40 批，11-02）。</div>
+        <p>这个判断能被反驳的地方在于：回帖量不等于观看量，愿意回帖的人在时段上本来就更晚。要证伪，需要拿到分时段的播放登记，而这一项目前只在第 38 期与第 41 期有。</p>
+
+        <h3>二、改稿次数与点击的关系：改到第 3 次反而不再涨</h3>
+        <p>按改稿次数分组看夜间点击登记量（11-01 至 11-07，样本 63 条）：</p>
+        <table class="cmp">
+          <caption>改稿次数与夜间点击登记量（样本 63 条，单位：次）</caption>
+          <thead><tr><th>改稿次数</th><th>条目数</th><th>点击中位数</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td>0 次</td><td>11</td><td>286</td><td>多为老条目回看</td></tr>
+            <tr><td>1 次</td><td>24</td><td>335</td><td>多为封面或片头微调</td></tr>
+            <tr><td>2 次</td><td>19</td><td>402</td><td>第 38 期换色在此组</td></tr>
+            <tr><td>3 次及以上</td><td>9</td><td>381</td><td>剪辑调序占 6 条</td></tr>
+          </tbody>
+        </table>
+        <p>第 2 次改稿组的中位数最高，第 3 次组回落 21 点。样本只有 9 条，不足以下定论，但和“改得越多越好”的直觉相反。第 38 期是典型：换色后从 312 升到 407，第二次加小标题改动后基本没动。</p>
+
+        <h3>三、撤档的四种说法，只有两种有原始记录</h3>
+        <p>11-03 至 11-07 的四条撤档，登记措辞分别是“技术复核”“素材重剪”“排期让位”“待定”。前两条在排期表里附了操作人署名，后两条只有一句话，没有时间戳。按可信度分三档：</p>
+        <ul>
+          <li><b>有原始记录：</b>“技术复核”（11-03）与“素材重剪”（11-06），均能在改稿记录里找到对应动作。</li>
+          <li><b>仅转述：</b>“排期让位”（11-05）来自排期组口头说明，无书面条目。</li>
+          <li><b>推测：</b>“待定”（11-07）未给原因，外部只能从相邻档期上移推断是挤压。</li>
+        </ul>
+        <p>这里要区分事实与转述。11-06 的“素材重剪”是事实，因为改稿记录里有 11-06 22:10 的一条操作；11-05 的“排期让位”只是回应，没法核对。把两者混为一谈，就会得出“撤档都有技术原因”的错误结论。</p>
+
+        <h3>四、封面字号下调 8pt 的那次，收益可能来自构图不是字号</h3>
+        <p>第 38 期封面改动两项：底色调暖、主标题字号从 44 降到 36。很多人把点击上升归给字号，但同一时期构图上从三人并排改成侧向排列，主体占比从 38% 提到 55%。两项同时改，单看结果无法拆开归因。第 41 期只改字号、不改构图，11-06 上线后点击中位数 344，与第 1 次改稿组的 335 接近。这提供了一个弱证据：字号单独作用有限。</p>
+        <p>要说清楚的是，这是同项目内的对照，不是实验设计。样本小、时段不同、观众构成也可能变。结论应当写成“没有观察到字号单独带来明显提升”，而不是“字号没用”。</p>
+      </section>
+
+      <section class="block" id="guide">
+        <div class="block-head">
+          <h2>深夜观看指南<span>五分钟内做完筛选取舍</span></h2>
+        </div>
+        <ol class="steps">
+          <li><b>先看排期表版本号。</b>v11.08 这类编号每周日更新，版本号没变说明当天没有结构性调整，条目层面的微调看更新记录即可。</li>
+          <li><b>再看改稿次数。</b>第 2 次改稿组的中位点击是 402，高于 0 次的 286。若你只想挑一条，优先看改过 1 至 2 次的条目。</li>
+          <li><b>核对版本长度。</b>第 39 期有 29 分钟与 34 分钟两版，差在 12 分与 21 分的过场。长版夜间才有入口，白天打开会缺一段。</li>
+          <li><b>确认撤档状态。</b>四条撤档里有两条没有时间戳，别把“待定”当成“已取消”，它可能次日恢复。</li>
+          <li><b>最后看回帖里的具体指向。</b>64 条回帖中 23 条提到具体镜次或过场，这类信息比“好看不好看”有用得多。</li>
+        </ol>
+      </section>
+
+      <section class="block" id="faq">
+        <div class="block-head">
+          <h2>常见问答<span>档期、版本与统计口径</span></h2>
+        </div>
+        <details class="faq">
+          <summary>排期表的“改稿次数”怎么算？字幕微调算不算？</summary>
+          <div class="ans"><p>只计能改变观看体验的改动：封面、片头、剪辑调序、时长变化。字幕错字修正、标点调整不计。11-08 起口径写进公告条，之前第 37 期至 40 期按同一规则回补过。</p></div>
+        </details>
+        <details class="faq">
+          <summary>第 39 期为什么有两个时长版本？</summary>
+          <div class="ans"><p>29 分钟版是首播版，34 分钟版补了 12 分与 21 分两处过场。长版只在夜间档开放，白天入口不显示，排期表备注写的是“长版仅夜间”。两个版本共用同一个期号，容易混淆。</p></div>
+        </details>
+        <details class="faq">
+          <summary>“待定”状态的条目到底还会不会上？</summary>
+          <div class="ans"><p>11-07 那条只有“待定”两个字，没有时间戳和署名。按现有记录无法确认，相邻档期上移只能算推测。对照 10 月的三条“待定”，两条在 48 小时内恢复，一条直接并入下一期。</p></div>
+        </details>
+        <details class="faq">
+          <summary>夜间点击登记量和播放量有什么区别？</summary>
+          <div class="ans"><p>登记量只统计 00:00 至 03:00 的入口点击，不含回看与外部跳转。榜单按登记量排，所以老条目回看多但排名不高。10 月榜单封存时，第一名登记量 512，第六名 298。</p></div>
+        </details>
+        <details class="faq">
+          <summary>分类为什么把“长镜头实验”并进了短剧向剪辑？</summary>
+          <div class="ans"><p>该类 10 月只有 3 条，单独成类检索成本高。11-03 合并后，7 条历史记录改挂“短剧向剪辑”，原标签保留在备注里，仍可查到。</p></div>
+        </details>
+        <details class="faq">
+          <summary>封面换色后点击上涨，是颜色起作用吗？</summary>
+          <div class="ans"><p>第 38 期同时改了构图，主体占比从 38% 提到 55%，无法单归因于颜色。第 41 期只调字号不改构图，点击中位数 344，与只改一次的组接近，说明单改视觉细节的收益有限。</p></div>
+        </details>
+      </section>
+
+      <section class="block" id="reviews">
+        <div class="block-head">
+          <h2>观众评论<span>回帖汇总第 41 批，64 条节选</span></h2>
+          <a class="more" href="/#reflect">去写一条 →</a>
+        </div>
+        <div class="reviews">
+          <article class="review">
+            <div class="who"><span class="av">夜</span><b>夜班老陈</b><em>11-06 23:52</em></div>
+            <p>第 39 期 34 分钟版第 12 分那个过场确实比 29 分钟版顺，但长版只在夜间开，我白天想看只能等第二天。这个差别应该在入口上写清楚。</p>
+          </article>
+          <article class="review">
+            <div class="who"><span class="av">鹿</span><b>鹿角灯</b><em>11-07 00:31</em></div>
+            <p>封面换成暖橙之后第一眼确实更抓人。不过第 38 期主标题从 44 降到 36，我手机上看有点小，得凑近。</p>
+          </article>
+          <article class="review">
+            <div class="who"><span class="av">阿</span><b>阿岚不睡</b><em>11-07 01:18</em></div>
+            <p>说“三个闸口”有点绝对。我连续三天 01:50 打开都有新条目，虽然只有零星几条。数据是 78%，不是 100%。</p>
+          </article>
+          <article class="review neg">
+            <div class="who"><span class="av">K</span><b>K 线以下</b><em>11-07 02:04</em></div>
+            <p>“待定”那条到现在没说法，公告条只写“两条撤档说明”，点进去一条有署名一条没有。这种半截说明还不如不写。</p>
+          </article>
+          <article class="review">
+            <div class="who"><span class="av">麦</span><b>麦冬茶</b><em>11-05 23:40</em></div>
+            <p>改稿次数那张表有用。我按改过 1 到 2 次的挑了两条，确实比随手点开的老条目稳。中位数 402 这个数记下了。</p>
+          </article>
+          <article class="review neg">
+            <div class="who"><span class="av">六</span><b>六号机位</b><em>11-05 22:57</em></div>
+            <p>把“长镜头实验”并到短剧向剪辑里，我找老条目找了半天。分类合并没问题，但原标签只在备注里，检索时搜不到。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="block" id="news">
+        <div class="block-head">
+          <h2>相关资讯<span>排期、版本与入口调整</span></h2>
+        </div>
+        <div class="news-grid">
+          <article class="news">
+            <img src="https://picsum.photos/seed/madou-news-a/192/144" width="192" height="144" loading="lazy" alt="电脑屏幕上的排期表格与时间标注">
+            <div>
+              <h3>11-08 排期表 v11.08 归档</h3>
+              <span>今天 01:20 · 排期组</span>
+              <p>第 41 期入表，改稿计数口径同步调整。</p>
+            </div>
+          </article>
+          <article class="news">
+            <img src="https://picsum.photos/seed/madou-news-b/192/144" width="192" height="144" loading="lazy" alt="夜间灯下的笔记本与标记笔">
+            <div>
+              <h3>第 39 期长版夜间入口恢复</h3>
+              <span>昨天 22:40 · 版本记录</span>
+              <p>34 分钟版重新开放，白天入口仍关闭。</p>
+            </div>
+          </article>
+          <article class="news">
+            <img src="https://picsum.photos/seed/madou-news-c/192/144" width="192" height="144" loading="lazy" alt="并排的封面草图与色卡对照">
+            <div>
+              <h3>第 38 期换色理由补齐署名</h3>
+              <span>11-06 23:15 · 改稿记录</span>
+              <p>11-02 的操作补登操作人与时间。</p>
+            </div>
+          </article>
+          <article class="news">
+            <img src="https://picsum.photos/seed/madou-news-d/192/144" width="192" height="144" loading="lazy" alt="白板上用便利贴排出的分类结构">
+            <div>
+              <h3>选题分类合并影响 7 条记录</h3>
+              <span>11-03 00:50 · 分类维护</span>
+              <p>“长镜头实验”并入“短剧向剪辑”。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="block" id="rank">
+        <div class="block-head">
+          <h2>本周夜间点击榜<span>00:00 至 03:00 登记量</span></h2>
+          <span class="more">11-01 至 11-07</span>
+        </div>
+        <ol class="rank">
+          <li><span class="nm">第 38 期 换色版<small>11-02 复核，改稿 2 次</small></span><span class="sc">512</span></li>
+          <li><span class="nm">第 41 期 群像收束<small>11-06 上线，改稿 3 次</small></span><span class="sc">477</span></li>
+          <li><span class="nm">第 39 期 34 分钟长版<small>夜间入口，11-07 恢复</small></span><span class="sc">441</span></li>
+          <li><span class="nm">第 39 期 29 分钟首播版<small>10-31 上线</small></span><span class="sc">396</span></li>
+          <li><span class="nm">第 40 期 分段上线版<small>11-04 起试行</small></span><span class="sc">352</span></li>
+          <li><span class="nm">第 37 期 回看条目<small>改稿 0 次</small></span><span class="sc">298</span></li>
+        </ol>
+      </section>
+
+      <section class="block" id="related">
+        <div class="block-head">
+          <h2>相关推荐<span>按你可能会搜的词整理</span></h2>
+        </div>
+        <div class="tags">
+          <a href="/#picks">竖屏群像剪辑</a>
+          <a href="/#picks">短剧向剪辑 34 分钟版</a>
+          <a href="/#deep">封面改稿字号对比</a>
+          <a href="/#news">档期时间线撤档说明</a>
+          <a href="/#guide">深夜观看筛选方法</a>
+          <a href="/#rank">夜间点击登记量榜单</a>
+          <a href="/#faq">排期表版本号规则</a>
+          <a href="/#reviews">观众回帖具体镜次</a>
+          <a href="/#overview">改稿次数统计口径</a>
+          <a href="/#cats">选题分类合并记录</a>
+        </div>
+      </section>
+
+      <section class="block reflect" id="reflect">
+        <h2>说说你昨晚看了哪一条</h2>
+        <p style="font-size:14.5px;color:var(--ink-2);margin:0">写下期号与具体位置，比如“第 39 期 12 分过场”。只写“好看”的留言会被归档但不进汇总。</p>
+        <form id="reflectForm" novalidate>
+          <div class="f1"><label for="rf-name">称呼</label><input id="rf-name" name="name" type="text" maxlength="16" placeholder="夜班老陈"></div>
+          <div class="f2"><label for="rf-text">你想说的条目细节</label><textarea id="rf-text" name="text" rows="3" maxlength="200" placeholder="第 41 期 02:30 那段调序后，节奏比上一版稳。"></textarea></div>
+          <button type="submit">提交到本机草稿</button>
+          <p class="form-msg" id="rfMsg" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+    </div>
+
+    <aside class="side">
+      <nav class="panel" aria-label="侧栏栏目导航">
+        <h2>栏目导航</h2>
+        <ul class="side-nav" id="sideNav">
+          <li><a href="/#overview">档期总览</a></li>
+          <li><a href="/#picks">深夜精选条目</a></li>
+          <li><a href="/#latest">最新更新记录</a></li>
+          <li><a href="/#cats">选题分类入口</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">深夜观看指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#reviews">观众评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#rank">本周夜间点击榜</a></li>
+          <li><a href="/#related">相关推荐</a></li>
+          <li><a href="/#reflect">说说你的条目</a></li>
+        </ul>
+      </nav>
+
+      <div class="panel">
+        <h2>三条只出现一次的事</h2>
+        <ul class="mini-news">
+          <li>11-04 起第 40 期试行分段上线，00:40 与 02:50 各放一段。<time>11-04</time></li>
+          <li>第 37 期字幕错字在 11-03 修正，不计改稿次数。<time>11-03</time></li>
+          <li>10 月榜单第一名登记量 512，第六名 298。<time>11-01</time></li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>排期组原话</h2>
+        <blockquote class="quotebox">
+          “改稿次数只记能看出来变了的动作。字幕错字改十个也不算一次。”
+          <cite>—— 排期组 11-08 公告条附注</cite>
+        </blockquote>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="/#hero">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1b2130"/>
+            <circle cx="32" cy="34" r="15" fill="none" stroke="#ffb648" stroke-width="4"/>
+            <path d="M32 12v8M32 48v8M10 34h8M46 34h8" stroke="#ffb648" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="32" cy="34" r="4" fill="#ff8a3d"/>
+          </svg>
+          <span class="name">麻豆不打烊早知道设计</span>
+        </a>
+        <p>把凌晨三个闸口、改稿次数和版本差异摊开，给愿意细看的人一份可对照的排期笔记。</p>
+      </div>
+      <div class="foot-col">
+        <h3>档期与版本</h3>
+        <ul>
+          <li><a href="/#latest">最新更新记录</a></li>
+          <li><a href="/#overview">档期总览</a></li>
+          <li><a href="/#news">排期表版本说明</a></li>
+          <li><a href="/#deep">改稿次数口径</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>条目与分类</h3>
+        <ul>
+          <li><a href="/#picks">深夜精选条目</a></li>
+          <li><a href="/#cats">选题分类入口</a></li>
+          <li><a href="/#rank">本周夜间点击榜</a></li>
+          <li><a href="/#related">相关推荐标签</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>参与</h3>
+        <ul>
+          <li><a href="/#reviews">观众评论</a></li>
+          <li><a href="/#reflect">提交条目反馈</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#guide">深夜观看指南</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>示例数据说明：条目、期号、点击登记量与评论均为演示用示例，非真实运营数据；时间以 2026-11-08 为参考日。页脚更新时间 11-08 01:20，对应正文可核对的“最新更新记录”首条。</span>
+      <span>© 2026 麻豆不打烊早知道设计 · 内容整理示例</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" type="button" aria-label="回到顶部">↑ 顶部</button>
+
+<script>
+(function(){
+  var menuBtn = document.getElementById('menuBtn');
+  var nav = document.getElementById('mainNav');
+  if(menuBtn && nav){
+    menuBtn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.innerWidth <= 900){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 420){ toTop.classList.add('show'); }
+    else{ toTop.classList.remove('show'); }
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+  });
+
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var targets = sideLinks.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  });
+  function markActive(){
+    var pos = window.scrollY + 150;
+    var idx = -1;
+    targets.forEach(function(el, i){
+      if(el && el.offsetTop <= pos){ idx = i; }
+    });
+    sideLinks.forEach(function(a, i){
+      a.classList.toggle('active', i === idx);
+    });
+  }
+  window.addEventListener('scroll', markActive, {passive:true});
+  window.addEventListener('resize', markActive);
+  markActive();
+
+  var q = document.getElementById('q');
+  var qBtn = document.getElementById('qBtn');
+  var note = document.createElement('p');
+  note.className = 'search-note';
+  note.setAttribute('role','status');
+  note.setAttribute('aria-live','polite');
+  var searchBox = q ? q.closest('.search') : null;
+  if(searchBox && searchBox.parentNode){
+    searchBox.parentNode.insertBefore(note, searchBox.nextSibling);
+  }
+  function doSearch(){
+    if(!q) { return; }
+    var kw = q.value.trim();
+    if(!kw){ note.textContent = ''; return; }
+    var hit = null;
+    var scope = document.querySelectorAll('main h1, main h2, main h3, main summary, main p, main li, main a');
+    for(var i=0;i<scope.length;i++){
+      var t = scope[i].textContent || '';
+      if(t.indexOf(kw) !== -1){
+        var host = scope[i].closest('section, li, article, details');
+        if(host){ hit = host; break; }
+      }
+    }
+    if(hit){
+      note.textContent = '已定位到含“' + kw + '”的区块。';
+      hit.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'});
+    }else{
+      note.textContent = '没有找到含“' + kw + '”的内容，试试“第 39 期”“改稿”“撤档”等具体词。';
+    }
+  }
+  if(qBtn){ qBtn.addEventListener('click', doSearch); }
+  if(q){
+    q.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+    });
+  }
+
+  var form = document.getElementById('reflectForm');
+  var msg = document.getElementById('rfMsg');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var text = document.getElementById('rf-text').value.trim();
+      var name = document.getElementById('rf-name').value.trim() || '匿名夜猫';
+      if(text.length < 8){
+        msg.style.color = '#f0709a';
+        msg.textContent = '请写得具体些，至少包含期号或时间段，例如“第 39 期 12 分”。';
+        return;
+      }
+      msg.style.color = '#5ec8c0';
+      msg.textContent = name + '，这条已存为本地草稿，共 ' + text.length + ' 字。演示站不上传服务器。';
+      form.reset();
+    });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "麻豆不打烊早知道设计",
+  "inLanguage": "zh-CN",
+  "description": "夜间档排期、版本差异与封面改稿的拆解笔记，参考日 2026-11-08。",
+  "headline": "麻豆不打烊早知道设计-夜间档更新与选题观察站"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "排期表的“改稿次数”怎么算？字幕微调算不算？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "只计能改变观看体验的改动：封面、片头、剪辑调序、时长变化。字幕错字修正、标点调整不计。11-08 起口径写进公告条，第 37 期至 40 期按同一规则回补过。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "第 39 期为什么有两个时长版本？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "29 分钟版是首播版，34 分钟版补了 12 分与 21 分两处过场。长版只在夜间档开放，白天入口不显示，两个版本共用同一个期号。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "“待定”状态的条目到底还会不会上？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "11-07 那条只有“待定”两个字，没有时间戳和署名，按现有记录无法确认。对照 10 月的三条“待定”，两条在 48 小时内恢复，一条并入下一期。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "夜间点击登记量和播放量有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "登记量只统计 00:00 至 03:00 的入口点击，不含回看与外部跳转。榜单按登记量排，因此老条目回看多但排名不高。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "分类为什么把“长镜头实验”并进了短剧向剪辑？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "该类 10 月只有 3 条，单独成类检索成本高。11-03 合并后，7 条历史记录改挂“短剧向剪辑”，原标签保留在备注里。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "封面换色后点击上涨，是颜色起作用吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第 38 期同时改了构图，主体占比从 38% 提到 55%，无法单归因于颜色。第 41 期只调字号不改构图，点击中位数 344，与只改一次的组接近。"
+      }
+    }
+  ]
+}
+</script>
+</body>
+                                                                       </html>
