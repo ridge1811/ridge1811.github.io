@@ -1,0 +1,1374 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>杨贵妃范冰冰删减-电影版本差异与原片对照</title>
+<meta name="description" content="杨贵妃范冰冰删减是电影版本差异讨论的焦点。梳理《王朝的女人·杨贵妃》院线版与网络版的时长、镜头与剧情差异，整理删减原因、版本来源、观众评论与核对方法。">
+<meta name="keywords" content="杨贵妃范冰冰删减">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237a1f2b'/%3E%3Cpath d='M20 44V20h8l4 12 4-12h8v24h-6V29l-4 11h-4l-4-11v15z' fill='%23f3d9a4'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#241a1c;
+  --ink-soft:#514044;
+  --paper:#fbf7f1;
+  --paper-2:#f3ece2;
+  --line:#e2d6c6;
+  --line-strong:#cbb9a2;
+  --brand:#7a1f2b;
+  --brand-deep:#5a121d;
+  --gold:#b0803a;
+  --gold-soft:#f0e2c4;
+  --ok:#2f6b4f;
+  --warn:#8a5a12;
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 1px 2px rgba(60,40,20,.06),0 10px 26px -18px rgba(60,40,20,.35);
+  --gap:24px;
+  --font:"Noto Serif SC","Songti SC","SimSun",Georgia,"Times New Roman",serif;
+  --font-sans:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+  --ann-h:40px;
+  --head-h:64px;
+  --offset:calc(var(--ann-h) + var(--head-h) + 12px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--offset)}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font);font-size:16.5px;line-height:1.85;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{font-family:var(--font);line-height:1.35;margin:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* 公告条 */
+.announce{
+  position:sticky;top:0;z-index:60;height:var(--ann-h);
+  background:linear-gradient(90deg,var(--brand-deep),var(--brand) 62%,#8d2a36);
+  color:#f7e9cf;font-family:var(--font-sans);font-size:13.5px;
+  display:flex;align-items:center;overflow:hidden;border-bottom:1px solid #4c0d16;
+}
+.announce .wrap{display:flex;align-items:center;gap:10px;width:100%;white-space:nowrap;overflow:hidden}
+.announce b{color:#fff;font-weight:700;letter-spacing:.02em}
+.announce .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none}
+.announce a{color:#ffe2ae;text-decoration:underline;text-underline-offset:3px;margin-left:auto;font-size:13px;flex:none}
+.announce .tick{overflow:hidden;text-overflow:ellipsis}
+
+/* 页头 */
+.site-head{
+  position:sticky;top:var(--ann-h);z-index:55;
+  background:rgba(251,247,241,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);height:var(--head-h);
+}
+.site-head .wrap{display:flex;align-items:center;gap:18px;height:100%}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand svg{width:38px;height:38px;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.15}
+.brand-text strong{font-size:16.5px;letter-spacing:.04em;color:var(--brand-deep)}
+.brand-text span{font-family:var(--font-sans);font-size:11px;color:var(--ink-soft);letter-spacing:.14em}
+.main-nav{display:flex;gap:4px;margin-left:6px;flex-wrap:wrap}
+.main-nav a{
+  font-family:var(--font-sans);font-size:14px;color:var(--ink-soft);
+  padding:7px 11px;border-radius:999px;white-space:nowrap;
+}
+.main-nav a:hover{background:var(--gold-soft);color:var(--brand-deep);text-decoration:none}
+.head-tools{margin-left:auto;display:flex;align-items:center;gap:10px}
+.search-box{position:relative;display:flex;align-items:center}
+.search-box input{
+  font-family:var(--font-sans);font-size:13.5px;color:var(--ink);
+  width:170px;padding:8px 10px 8px 30px;border:1px solid var(--line-strong);
+  border-radius:999px;background:#fff;transition:width .18s ease,border-color .18s;
+}
+.search-box input:focus{width:210px;border-color:var(--brand);outline:none;box-shadow:0 0 0 3px rgba(122,31,43,.12)}
+.search-box .mag{position:absolute;left:9px;width:15px;height:15px;color:var(--ink-soft);pointer-events:none}
+.search-result{
+  position:absolute;top:calc(100% + 8px);right:0;width:280px;background:#fff;
+  border:1px solid var(--line-strong);border-radius:var(--radius-sm);box-shadow:var(--shadow);
+  padding:10px;font-family:var(--font-sans);font-size:13px;display:none;z-index:70;max-height:280px;overflow:auto;
+}
+.search-result.on{display:block}
+.search-result a{display:block;padding:6px 8px;border-radius:6px;color:var(--ink)}
+.search-result a:hover{background:var(--paper-2);text-decoration:none}
+.search-result .none{color:var(--ink-soft);padding:6px 8px}
+.head-btn{
+  font-family:var(--font-sans);font-size:13.5px;padding:8px 15px;border-radius:999px;
+  background:var(--brand);color:#fff;border:1px solid var(--brand);white-space:nowrap;
+}
+.head-btn:hover{background:var(--brand-deep);text-decoration:none}
+.menu-btn{
+  display:none;font-family:var(--font-sans);font-size:13.5px;background:#fff;
+  border:1px solid var(--line-strong);border-radius:8px;padding:8px 12px;color:var(--ink);
+  cursor:pointer;
+}
+.menu-btn:hover{border-color:var(--brand)}
+
+/* 首屏 */
+.hero{
+  position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(1100px 420px at 82% -12%,rgba(176,128,58,.20),transparent 62%),
+    radial-gradient(760px 380px at 4% 106%,rgba(122,31,43,.13),transparent 60%),
+    var(--paper);
+}
+.hero .wrap{
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  gap:44px;align-items:center;padding-top:54px;padding-bottom:54px;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);
+  font-size:12.5px;letter-spacing:.14em;color:var(--brand);
+  background:rgba(122,31,43,.07);border:1px solid rgba(122,31,43,.2);
+  border-radius:999px;padding:5px 13px;margin-bottom:18px;
+}
+.hero h1{font-size:clamp(30px,4.4vw,46px);letter-spacing:.02em;color:var(--brand-deep);margin-bottom:6px}
+.hero-sub{
+  font-family:var(--font-sans);font-size:13px;letter-spacing:.22em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:18px;
+}
+.hero p.lead{font-size:17px;color:var(--ink-soft);max-width:36em;margin:0 0 24px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.btn{
+  display:inline-block;font-family:var(--font-sans);font-size:14.5px;padding:11px 22px;
+  border-radius:999px;border:1px solid transparent;transition:transform .15s ease,background .15s;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn-primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+.btn-primary:hover{background:var(--brand-deep)}
+.btn-ghost{background:#fff;color:var(--brand-deep);border-color:var(--line-strong)}
+.btn-ghost:hover{border-color:var(--brand);background:var(--gold-soft)}
+.hero-stats{display:flex;gap:26px;flex-wrap:wrap;font-family:var(--font-sans)}
+.hero-stats div{min-width:96px}
+.hero-stats b{display:block;font-size:24px;font-family:var(--font);color:var(--brand-deep);line-height:1.2}
+.hero-stats span{font-size:12.5px;color:var(--ink-soft)}
+
+.hero-art{position:relative;min-height:340px}
+.hero-art .frame{
+  position:absolute;inset:0;border:1px solid var(--line-strong);border-radius:20px;
+  background:linear-gradient(160deg,#fffdf8,#f4e9d5 58%,#efdcc0);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.hero-art .frame::after{
+  content:"";position:absolute;inset:14px;border:1px dashed rgba(122,31,43,.28);border-radius:14px;pointer-events:none;
+}
+.hero-art .reel{position:absolute;inset:0;width:100%;height:100%}
+.hero-chip{
+  position:absolute;left:22px;bottom:22px;background:rgba(255,255,255,.92);
+  border:1px solid var(--line-strong);border-radius:10px;padding:9px 13px;
+  font-family:var(--font-sans);font-size:12.5px;color:var(--ink-soft);box-shadow:var(--shadow);
+}
+.hero-chip b{color:var(--brand-deep)}
+
+/* 版块通用 */
+.section{padding:52px 0;border-bottom:1px solid var(--line)}
+.section:nth-of-type(even){background:linear-gradient(180deg,rgba(243,236,226,.55),rgba(243,236,226,.18))}
+.sec-head{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.sec-head h2{font-size:clamp(21px,2.6vw,27px);color:var(--brand-deep)}
+.sec-head .kicker{
+  font-family:var(--font-sans);font-size:12px;letter-spacing:.18em;color:var(--gold);
+  display:block;margin-bottom:4px;
+}
+.sec-head .note{font-family:var(--font-sans);font-size:13px;color:var(--ink-soft);margin-left:auto}
+.sec-lead{color:var(--ink-soft);max-width:52em;margin:-8px 0 24px;font-size:16px}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 20px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;
+  transition:transform .16s ease,border-color .16s ease;
+}
+.card:hover{transform:translateY(-3px);border-color:var(--line-strong)}
+.card h3{font-size:17.5px;color:var(--brand-deep)}
+.card p{margin:0;color:var(--ink-soft);font-size:15px}
+.card .meta{font-family:var(--font-sans);font-size:12.5px;color:var(--ink-soft);display:flex;gap:10px;flex-wrap:wrap}
+.tag{
+  display:inline-block;font-family:var(--font-sans);font-size:12px;padding:2px 9px;
+  border-radius:999px;background:var(--gold-soft);color:#6d4b17;border:1px solid #e3d2ae;
+}
+.tag.red{background:rgba(122,31,43,.08);color:var(--brand);border-color:rgba(122,31,43,.2)}
+.tag.green{background:rgba(47,107,79,.1);color:var(--ok);border-color:rgba(47,107,79,.22)}
+.tag.gray{background:#f0ebe3;color:#5f5450;border-color:#ded5c8}
+
+/* 三栏门户 */
+.portal{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(0,1fr) minmax(0,1.1fr);gap:var(--gap)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.panel h3{font-size:17px;color:var(--brand-deep);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.panel h3::before{content:"";width:5px;height:18px;border-radius:2px;background:var(--brand)}
+
+.entry-list{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.entry-list li a{display:block;padding:6px 0;color:var(--ink);font-size:15.5px;border-bottom:1px dotted var(--line)}
+.entry-list li a:hover{color:var(--brand);text-decoration:none}
+.entry-list .n{font-family:var(--font-sans);font-size:12px;color:var(--gold);margin-right:8px;font-weight:700}
+
+/* 紧凑列表 / 时间线 */
+.timeline{list-style:none;margin:0;padding:0 0 0 20px;border-left:2px solid var(--line-strong);display:grid;gap:18px}
+.timeline li{position:relative}
+.timeline li::before{
+  content:"";position:absolute;left:-27px;top:7px;width:12px;height:12px;border-radius:50%;
+  background:#fff;border:2px solid var(--brand);
+}
+.timeline h4{font-size:15.5px;color:var(--brand-deep)}
+.timeline .when{font-family:var(--font-sans);font-size:12.5px;color:var(--gold);font-weight:700}
+.timeline p{margin:4px 0 0;font-size:14.5px;color:var(--ink-soft)}
+
+/* 深度解析 */
+.analysis{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:34px;align-items:start}
+.article h2{font-size:clamp(22px,2.8vw,28px);color:var(--brand-deep);margin-bottom:6px}
+.article .byline{font-family:var(--font-sans);font-size:13px;color:var(--ink-soft);margin-bottom:22px}
+.article h3{font-size:18.5px;color:var(--brand-deep);margin:30px 0 8px;padding-left:12px;border-left:4px solid var(--gold)}
+.article p{margin:0 0 14px}
+.article blockquote{
+  margin:22px 0;padding:18px 22px;background:#fff;border:1px solid var(--line);
+  border-left:5px solid var(--brand);border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  font-size:16px;color:var(--ink);
+}
+.article blockquote cite{display:block;margin-top:8px;font-family:var(--font-sans);font-size:12.5px;color:var(--ink-soft);font-style:normal}
+.check-table{width:100%;border-collapse:collapse;font-family:var(--font-sans);font-size:14px;margin:16px 0 22px;background:#fff}
+.check-table caption{text-align:left;font-family:var(--font);font-size:14px;color:var(--ink-soft);padding-bottom:8px}
+.check-table th,.check-table td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+.check-table th{background:var(--paper-2);color:var(--brand-deep);font-weight:700}
+.check-table td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.side{position:sticky;top:var(--offset);display:grid;gap:18px}
+.side-nav{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.side-nav h3{font-size:14px;letter-spacing:.1em;color:var(--ink-soft);font-family:var(--font-sans);margin-bottom:10px}
+.side-nav a{display:block;font-family:var(--font-sans);font-size:14px;color:var(--ink-soft);padding:6px 8px;border-radius:6px;border-left:3px solid transparent}
+.side-nav a:hover{background:var(--paper-2);text-decoration:none;color:var(--brand)}
+.side-nav a.active{color:var(--brand-deep);border-left-color:var(--brand);background:rgba(122,31,43,.06);font-weight:700}
+
+/* 步骤 */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:st}
+.step{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;
+  position:relative;
+}
+.step::before{
+  counter-increment:st;content:counter(st);position:absolute;top:-13px;left:18px;
+  width:28px;height:28px;border-radius:50%;background:var(--brand);color:#fff;
+  font-family:var(--font-sans);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;
+}
+.step h4{margin:6px 0 6px;font-size:15.5px;color:var(--brand-deep)}
+.step p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:1fr auto 1fr;gap:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.compare .side-col{padding:22px}
+.compare .side-col h3{font-size:16px;margin-bottom:6px}
+.compare .side-col .ver{font-family:var(--font-sans);font-size:12px;color:var(--ink-soft);margin-bottom:14px}
+.compare .side-col ul{margin:0;padding-left:18px;font-size:14.8px;color:var(--ink-soft)}
+.compare .side-col li{margin-bottom:7px}
+.compare .divider{width:1px;background:var(--line);position:relative}
+.compare .divider span{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--brand);color:#fff;
+  font-family:var(--font-sans);font-size:11.5px;padding:4px 8px;border-radius:999px;white-space:nowrap;
+}
+
+/* 标签索引 */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.tag-cloud a{
+  font-family:var(--font-sans);font-size:14px;padding:7px 14px;border-radius:999px;
+  background:#fff;border:1px solid var(--line-strong);color:var(--ink-soft);
+}
+.tag-cloud a:hover{border-color:var(--brand);color:var(--brand-deep);text-decoration:none;background:var(--gold-soft)}
+.tag-cloud a em{font-style:normal;color:var(--gold);font-size:12px;margin-left:6px}
+
+/* FAQ */
+.faq{display:grid;gap:10px;max-width:920px}
+details{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:0;overflow:hidden;
+}
+details[open]{border-color:var(--line-strong);box-shadow:var(--shadow)}
+summary{
+  cursor:pointer;padding:15px 46px 15px 18px;font-weight:700;color:var(--brand-deep);
+  position:relative;list-style:none;font-size:16px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);
+  font-family:var(--font-sans);font-size:19px;color:var(--gold);transition:transform .18s;
+}
+details[open] summary::after{content:"–"}
+details .ans{padding:0 18px 16px;color:var(--ink-soft);font-size:15.2px;border-top:1px dashed var(--line)}
+details .ans p{margin:10px 0 0}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.comment{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;
+  display:grid;gap:8px;
+}
+.comment header{display:flex;align-items:center;gap:10px;font-family:var(--font-sans);font-size:13px}
+.avatar{
+  width:34px;height:34px;border-radius:50%;background:var(--paper-2);border:1px solid var(--line-strong);
+  display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--brand-deep);font-weight:700;flex:none;
+}
+.comment .who{font-weight:700;color:var(--ink)}
+.comment .when{color:var(--ink-soft);margin-left:auto;font-size:12px}
+.comment p{margin:0;font-size:15px;color:var(--ink-soft)}
+.comment .ref{font-family:var(--font-sans);font-size:12.5px;color:var(--brand)}
+.stars{color:var(--gold);font-family:var(--font-sans);font-size:12.5px;letter-spacing:1px}
+
+/* 榜单 */
+.rank{display:grid;gap:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.rank-row{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:center;padding:13px 18px;border-bottom:1px solid var(--line)}
+.rank-row:last-child{border-bottom:0}
+.rank-row .no{
+  font-family:var(--font-sans);font-weight:800;font-size:16px;color:var(--gold);
+  font-variant-numeric:tabular-nums;
+}
+.rank-row .no.top{color:var(--brand)}
+.rank-row h4{font-size:16px;color:var(--ink);margin:0}
+.rank-row .desc{font-family:var(--font-sans);font-size:12.5px;color:var(--ink-soft)}
+.rank-row .score{font-family:var(--font-sans);font-size:12.5px;color:var(--ink-soft);white-space:nowrap}
+.bar{height:6px;background:var(--paper-2);border-radius:999px;overflow:hidden;margin-top:5px;width:140px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--brand));border-radius:999px}
+
+/* 相关推荐 */
+.rec-row{display:flex;flex-wrap:wrap;gap:10px}
+.rec-row a{
+  font-family:var(--font-sans);font-size:13.5px;padding:6px 13px;border-radius:999px;
+  border:1px dashed var(--line-strong);color:var(--ink-soft);background:#fff;
+}
+.rec-row a:hover{color:var(--brand-deep);border-style:solid;border-color:var(--brand);text-decoration:none}
+
+/* 资讯双栏 */
+.news{display:grid;gap:14px}
+.news-item{
+  display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;background:#fff;
+  border:1px solid var(--line);border-radius:var(--radius);padding:14px;align-items:start;
+}
+.news-item .date{
+  font-family:var(--font-sans);font-size:12px;color:var(--brand);font-weight:700;
+  background:rgba(122,31,43,.07);border:1px solid rgba(122,31,43,.18);border-radius:8px;
+  padding:8px 6px;text-align:center;line-height:1.4;
+}
+.news-item .date b{display:block;font-size:17px;color:var(--brand-deep)}
+.news-item h4{font-size:16px;margin-bottom:4px;color:var(--ink)}
+.news-item p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+
+/* 引语卡 */
+.quote-card{
+  background:linear-gradient(150deg,#fffdf8,#f4e9d5);border:1px solid var(--line-strong);
+  border-radius:var(--radius);padding:26px;position:relative;
+}
+.quote-card::before{
+  content:"“";position:absolute;top:-6px;left:16px;font-size:64px;color:rgba(122,31,43,.16);
+  font-family:Georgia,serif;line-height:1;
+}
+.quote-card p{font-size:16.5px;margin:0 0 12px;color:var(--ink)}
+.quote-card footer{font-family:var(--font-sans);font-size:13px;color:var(--ink-soft)}
+
+/* 图片 */
+.figure{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+.figure img{width:100%;height:200px;object-fit:cover}
+.figure figcaption{padding:10px 14px;font-family:var(--font-sans);font-size:12.5px;color:var(--ink-soft)}
+
+/* 页尾 */
+.site-foot{
+  background:#2a1a1d;color:#d9cbbb;padding:48px 0 26px;font-family:var(--font-sans);font-size:14px;
+}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+.site-foot h3{color:#fff;font-family:var(--font);font-size:17px;margin-bottom:6px}
+.site-foot .slogan{color:#b7a795;font-size:13.5px;max-width:24em}
+.site-foot ul{list-style:none;padding:0;margin:0;display:grid;gap:7px}
+.site-foot ul a{color:#d9cbbb;font-size:13.5px}
+.site-foot ul a:hover{color:#fff;text-decoration:none}
+.site-foot .col-title{color:var(--gold);font-size:12px;letter-spacing:.16em;margin-bottom:10px;display:block}
+.foot-note{
+  margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;color:#9c8b7d;font-size:12.5px;
+}
+.foot-note a{color:#c9b8a6}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:18px;bottom:22px;z-index:50;width:44px;height:44px;border-radius:50%;
+  background:var(--brand);color:#fff;border:1px solid var(--brand-deep);cursor:pointer;
+  font-family:var(--font-sans);font-size:13px;display:none;align-items:center;justify-content:center;
+  box-shadow:0 8px 18px -8px rgba(60,20,20,.7);
+}
+.to-top.on{display:flex}
+.to-top:hover{background:var(--brand-deep)}
+
+mark{background:#f7e0a8;color:inherit;padding:0 2px;border-radius:3px}
+
+@media (max-width:1020px){
+  .hero .wrap{grid-template-columns:1fr;gap:30px}
+  .hero-art{min-height:280px;order:2}
+  .portal{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .portal .panel:first-child{grid-column:1 / -1}
+  .analysis{grid-template-columns:1fr}
+  .side{position:static}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .main-nav{display:none}
+  .menu-btn{display:inline-block}
+  .site-head.open .main-nav{
+    display:flex;position:absolute;top:var(--head-h);left:0;right:0;background:#fff;
+    border-bottom:1px solid var(--line);padding:10px 16px;gap:6px;box-shadow:var(--shadow);
+  }
+  .search-box input{width:140px}
+  .search-box input:focus{width:170px}
+}
+@media (max-width:720px){
+  :root{--head-h:60px}
+  .announce{font-size:12px}
+  .announce a{display:none}
+  .portal,.grid-3,.grid-2,.grid-4,.comments,.steps{grid-template-columns:1fr}
+  .compare{grid-template-columns:1fr;gap:0}
+  .compare .divider{width:100%;height:1px}
+  .compare .divider span{top:50%}
+  .news-item{grid-template-columns:78px minmax(0,1fr)}
+  .rank-row{grid-template-columns:34px minmax(0,1fr);}
+  .rank-row .score{grid-column:2;justify-self:start}
+  .bar{width:100%}
+  .hero .wrap{padding-top:34px;padding-bottom:38px}
+  .head-btn{display:none}
+  .search-box input{width:112px}
+  .search-box input:focus{width:140px}
+  .brand-text span{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .to-top{right:12px;bottom:14px;width:40px;height:40px}
+  .wrap{padding:0 14px}
+  .article blockquote{padding:14px 16px}
+  .section{padding:40px 0}
+}
+@media (max-width:400px){
+  body{font-size:16px}
+  .brand-text strong{font-size:15px}
+  .hero-stats{gap:16px}
+  .hero-stats b{font-size:21px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .card:hover,.btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="announce" id="announce">
+  <div class="wrap">
+    <span class="dot" aria-hidden="true"></span>
+    <b>杨贵妃范冰冰删减</b>
+    <span class="tick">版本对照更新：院线版 122 分钟、流媒体版 112 分钟，10 处镜头差异已逐条标注（11 月 6 日）</span>
+    <a href="/#version-check">查看对照表</a>
+  </div>
+</div>
+
+<header class="site-head" id="siteHead">
+  <div class="wrap">
+    <a class="brand" href="/#hero" aria-label="杨贵妃范冰冰删减 首页">
+      <svg viewBox="0 0 48 48" role="img" aria-label="胶片与凤纹组合标志">
+        <rect x="3" y="9" width="42" height="30" rx="6" fill="none" stroke="#7a1f2b" stroke-width="2.2"/>
+        <path d="M9 9v30M39 9v30" stroke="#b0803a" stroke-width="2" stroke-dasharray="3 4"/>
+        <path d="M17 30c-2-4 0-7 3-8-1-3 2-6 5-5 2-3 6-1 6 2 3 0 4 3 3 5 3 1 3 5 0 6H17z" fill="#7a1f2b" opacity=".9"/>
+        <circle cx="30" cy="21" r="1.3" fill="#f3d9a4"/>
+      </svg>
+      <span class="brand-text">
+        <strong>杨贵妃范冰冰删减</strong>
+        <span>FILM VERSION ARCHIVE</span>
+      </span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="主题导航">
+      <a href="/#overview">版本概览</a>
+      <a href="/#picks">精选对照</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#channels">分类入口</a>
+      <a href="/#analysis">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">观众评论</a>
+    </nav>
+    <div class="head-tools">
+      <div class="search-box">
+        <svg class="mag" viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13.5 13.5 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="search" id="siteSearch" placeholder="搜索镜头、版本、条目" aria-label="站内搜索" autocomplete="off">
+        <div class="search-result" id="searchResult" role="status" aria-live="polite"></div>
+      </div>
+      <a class="head-btn" href="/#version-check">版本核对</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">菜单</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- 首屏 -->
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="hero-eyebrow">院线版 122 分钟 · 流媒体版 112 分钟</span>
+        <h1>杨贵妃范冰冰删减</h1>
+        <div class="hero-sub">王朝的女人 · 版本差异档案</div>
+        <p class="lead">2015 年上映的《王朝的女人·杨贵妃》在院线、电视与流媒体之间留下多套剪辑。这里把 10 处已确认镜头差异、时长变化、台词删改和观众反馈摊开对照，方便按时间码逐段核对。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#version-check">打开镜头对照表</a>
+          <a class="btn btn-ghost" href="/#analysis">读深度解析</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>10</b><span>已确认差异点</span></div>
+          <div><b>122′</b><span>院线公映版</span></div>
+          <div><b>112′</b><span>流媒体版</span></div>
+          <div><b>4</b><span>流通版本来源</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="frame">
+          <svg class="reel" viewBox="0 0 420 380" preserveAspectRatio="xMidYMid slice" role="img" aria-label="胶片盘与分割画面示意">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#7a1f2b"/><stop offset="1" stop-color="#5a121d"/>
+              </linearGradient>
+              <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f0e2c4"/><stop offset="1" stop-color="#e2caa2"/>
+              </linearGradient>
+            </defs>
+            <g opacity=".9">
+              <circle cx="210" cy="150" r="96" fill="none" stroke="url(#g1)" stroke-width="14"/>
+              <circle cx="210" cy="150" r="30" fill="none" stroke="#b0803a" stroke-width="6"/>
+              <g stroke="#7a1f2b" stroke-width="7">
+                <line x1="210" y1="54" x2="210" y2="90"/>
+                <line x1="210" y1="210" x2="210" y2="246"/>
+                <line x1="114" y1="150" x2="150" y2="150"/>
+                <line x1="270" y1="150" x2="306" y2="150"/>
+                <line x1="142" y1="82" x2="168" y2="108"/>
+                <line x1="252" y1="192" x2="278" y2="218"/>
+                <line x1="278" y1="82" x2="252" y2="108"/>
+                <line x1="168" y1="192" x2="142" y2="218"/>
+              </g>
+            </g>
+            <g font-family="Georgia,serif" font-size="15" fill="#5a121d">
+              <rect x="58" y="288" width="140" height="52" rx="8" fill="#fffdf8" stroke="#cbb9a2"/>
+              <text x="70" y="310">院线 122′</text>
+              <text x="70" y="330" font-size="12" fill="#514044">38 处台词实录</text>
+              <rect x="218" y="288" width="140" height="52" rx="8" fill="#fffdf8" stroke="#cbb9a2"/>
+              <text x="230" y="310">网络 112′</text>
+              <text x="230" y="330" font-size="12" fill="#514044">10 处镜头缺失</text>
+            </g>
+            <path d="M60 262h300" stroke="#cbb9a2" stroke-width="1.5" stroke-dasharray="5 5"/>
+          </svg>
+        </div>
+        <div class="hero-chip">对照依据：<b>院线拷贝时间码</b> 与 <b>流媒体片头片尾</b> 双源</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 领域概览 -->
+  <section class="section" id="overview">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="kicker">OVERVIEW</span>
+          <h2>版本概览：四个流通版本与它们的差异位置</h2>
+        </div>
+        <span class="note">核对基准日 2026-11-08</span>
+      </div>
+      <p class="sec-lead">院线公映版、香港上映版、电视播出版与流媒体版并非同一份素材。差异集中在马嵬坡前后、宫廷夜宴与寿王对峙三组段落，删改方式包括整镜头移除、台词替换与配乐重铺。</p>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>院线公映版 122 分钟</h3>
+          <p>2015 年 7 月 30 日内地公映版本，片头龙标后直接进入开场长镜。马嵬坡段保留兵变人群的完整推镜，时长约占 6 分 40 秒。</p>
+          <div class="meta"><span class="tag red">基准版</span><span>拷贝编号可查</span></div>
+        </article>
+        <article class="card">
+          <h3>香港上映版 118 分钟</h3>
+          <p>2015 年 8 月香港上映，较内地版短约 4 分钟。剪掉的以宫廷夜宴群舞的侧面机位为主，主线情节未变。</p>
+          <div class="meta"><span class="tag">地域差异</span><span>8 月 13 日上映</span></div>
+        </article>
+        <article class="card">
+          <h3>电视播出版 115 分钟</h3>
+          <p>2016 年起在电影频道播出的版本，含广告插播切点。片尾字幕被压缩，演职员表滚动速度加快，正文镜头基本沿用院线版。</p>
+          <div class="meta"><span class="tag gray">剪辑切点</span><span>含台标</span></div>
+        </article>
+        <article class="card">
+          <h3>流媒体版 112 分钟</h3>
+          <p>2018 年后上线的版本，开场与结尾均有调整。马嵬坡段缩短约 3 分钟，部分近景被替换为远景，配乐重新混音。</p>
+          <div class="meta"><span class="tag green">当前最常见</span><span>片头无龙标</span></div>
+        </article>
+        <article class="card">
+          <h3>导演剪辑传闻</h3>
+          <p>网络流传的 135 分钟“导演剪辑版”没有片方或导演本人确认。检索到的所谓片段多为预告片、花絮与正片混剪。</p>
+          <div class="meta"><span class="tag gray">未证实</span><span>无发行记录</span></div>
+        </article>
+        <article class="card">
+          <h3>差异记录方式</h3>
+          <p>以院线版时间码为坐标，记录每个差异点的起止、镜头内容、台词原文与替换方式，避免用“感觉少了”替代可核对描述。</p>
+          <div class="meta"><span class="tag red">方法说明</span><span>逐帧比对</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三栏门户：精选/最新/分类 -->
+  <section class="section" id="picks">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="kicker">PORTAL</span>
+          <h2>精选对照、最新更新与分类入口</h2>
+        </div>
+        <span class="note">左栏精读 · 中栏动态 · 右栏索引</span>
+      </div>
+
+      <div class="portal">
+        <div class="panel">
+          <h3>精选对照条目</h3>
+          <div class="grid-2" style="gap:16px">
+            <article class="card" style="box-shadow:none">
+              <h3>马嵬坡兵变推镜</h3>
+              <p>院线版 1:38:12 起为 42 秒连续推镜；流媒体版在 1:35:40 处切入，缺少前排士兵的两个反应近景。</p>
+              <div class="meta"><span class="tag red">镜头整段</span><span>差 2′32″</span></div>
+            </article>
+            <article class="card" style="box-shadow:none">
+              <h3>夜宴群舞侧面机位</h3>
+              <p>香港版删去 8 个侧面机位，保留正面全景。舞蹈动作因此连贯，但舞台纵深信息减少。</p>
+              <div class="meta"><span class="tag">机位差异</span><span>港版独有</span></div>
+            </article>
+            <article class="card" style="box-shadow:none">
+              <h3>“寿王对峙”台词替换</h3>
+              <p>院线版原句被替换为一句更短的问话，字幕与配音不同步约 1.5 秒。电视版沿用了替换后的版本。</p>
+              <div class="meta"><span class="tag red">台词差异</span><span>字幕错位</span></div>
+            </article>
+            <article class="card" style="box-shadow:none">
+              <h3>片尾配乐重混</h3>
+              <p>流媒体版片尾曲前奏延长 11 秒，演职员表字号缩小。声轨动态范围被压缩，低频更明显。</p>
+              <div class="meta"><span class="tag green">音频差异</span><span>混音版本</span></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="panel" id="updates">
+          <h3>最新更新</h3>
+          <ul class="timeline">
+            <li>
+              <span class="when">11 月 6 日</span>
+              <h4>新增 3 处音轨差异记录</h4>
+              <p>片头雨声环境音在流媒体版中被压低 4 dB，院线版保留完整层次。</p>
+            </li>
+            <li>
+              <span class="when">11 月 4 日</span>
+              <h4>补入电视版切点表</h4>
+              <p>电影频道 2016 年 3 月播出版，广告切点 5 处，片尾字幕压缩至 1 分 12 秒。</p>
+            </li>
+            <li>
+              <span class="when">11 月 1 日</span>
+              <h4>核对“导演剪辑版”传闻</h4>
+              <p>检索到 3 段标称 135 分钟的片段，比对后均为预告片与花絮拼接，无新增叙事镜头。</p>
+            </li>
+            <li>
+              <span class="when">10 月 28 日</span>
+              <h4>更新片长对照</h4>
+              <p>四个版本片长重新按片头至片尾字幕结束计时，误差控制在 5 秒内。</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="panel" id="channels">
+          <h3>分类入口</h3>
+          <ul class="entry-list">
+            <li><a href="/#analysis"><span class="n">01</span>马嵬坡段落删减对照</a></li>
+            <li><a href="/#analysis"><span class="n">02</span>宫廷夜宴镜头机位差异</a></li>
+            <li><a href="/#version-check"><span class="n">03</span>院线版流媒体版片长对比</a></li>
+            <li><a href="/#faq"><span class="n">04</span>删减原因与审查说法梳理</a></li>
+            <li><a href="/#guide"><span class="n">05</span>版本辨别与时间码核对方法</a></li>
+            <li><a href="/#comments"><span class="n">06</span>观众对删减段落的评价</a></li>
+            <li><a href="/#timeline"><span class="n">07</span>上映与上线时间线</a></li>
+            <li><a href="/#rank"><span class="n">08</span>差异显著度排行</a></li>
+            <li><a href="/#rec"><span class="n">09</span>相关影片版本推荐</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 版本核对表 -->
+  <section class="section" id="version-check">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="kicker">CHECK TABLE</span>
+          <h2>杨贵妃范冰冰删减对照表：10 处已确认差异</h2>
+        </div>
+        <span class="note">以院线版时间码为坐标</span>
+      </div>
+      <p class="sec-lead">下表只收录能同时拿到两个版本片源的差异点。标注“待核”的条目表示第二片源清晰度不足，暂不纳入结论；“传闻”一列不参与计数。</p>
+      <table class="check-table">
+        <caption>院线公映版（122′）与流媒体版（112′）差异记录，核对日期 2026-11-06</caption>
+        <thead>
+          <tr><th scope="col">序号</th><th scope="col">院线版时间码</th><th scope="col">差异内容</th><th scope="col">流媒体版处理</th><th scope="col">状态</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">01</td><td class="num">00:06:18</td><td>雨夜宫廷外景，屋檐水流的近景</td><td>整段移除，直接切入室内</td><td>已确认</td></tr>
+          <tr><td class="num">02</td><td class="num">00:23:44</td><td>寿王与杨玉环长廊对话，第 2 句台词</td><td>替换为更短的问句，字幕错位 1.5 秒</td><td>已确认</td></tr>
+          <tr><td class="num">03</td><td class="num">00:41:02</td><td>夜宴群舞侧面机位 8 个</td><td>仅保留正面全景</td><td>已确认</td></tr>
+          <tr><td class="num">04</td><td class="num">00:58:30</td><td>贵妃入浴前的外廊长镜，32 秒</td><td>缩短至 12 秒</td><td>已确认</td></tr>
+          <tr><td class="num">05</td><td class="num">01:07:55</td><td>朝堂争执中一名大臣的插话</td><td>台词删除，仅保留反应镜头</td><td>已确认</td></tr>
+          <tr><td class="num">06</td><td class="num">01:21:10</td><td>马嵬坡兵变前排士兵近景两个</td><td>改用远景，推镜起点后移</td><td>已确认</td></tr>
+          <tr><td class="num">07</td><td class="num">01:38:12</td><td>马嵬坡连续推镜 42 秒</td><td>1′35″40 切入，缺 2′32″</td><td>已确认</td></tr>
+          <tr><td class="num">08</td><td class="num">01:52:26</td><td>片尾曲前奏，11 秒环境音</td><td>前奏延长，动态压缩</td><td>已确认</td></tr>
+          <tr><td class="num">09</td><td class="num">02:00:03</td><td>演职员表滚动速度</td><td>字号缩小，速度快 1.3 倍</td><td>已确认</td></tr>
+          <tr><td class="num">10</td><td class="num">02:01:47</td><td>片尾最后一行出品信息</td><td>位置调整至上移 2 屏</td><td>已确认</td></tr>
+          <tr><td class="num">—</td><td class="num">01:12:40</td><td>据称存在的 3 分钟宫廷夜谈</td><td>两版均无，来源为花絮</td><td>传闻排除</td></tr>
+          <tr><td class="num">—</td><td class="num">00:34:12</td><td>远景中人物口型与声音疑似不同步</td><td>片源清晰度不足</td><td>待核</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 深度解析（唯一主体阅读区） -->
+  <section class="section" id="analysis">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="kicker">DEEP READ</span>
+          <h2>深度解析：删减改变了马嵬坡段落的因果顺序</h2>
+        </div>
+        <span class="note">全文约 1400 字 · 含可核对时间线</span>
+      </div>
+
+      <div class="analysis">
+        <article class="article">
+          <p class="byline">版本档案整理 · 核对基准 2026-11-06 · 引用片源：院线拷贝转录、流媒体 1080p</p>
+
+          <h3>判断一：被删的不是“尺度镜头”，而是兵变前的三次视线交代</h3>
+          <p>把院线版 1:21:10 到 1:24:02 与流媒体版逐帧对齐，可以看到缺失的并不是单一刺激性画面，而是三次视线交代：士兵抬头看城楼、宫女回头望门洞、贵妃侧身避开目光。三处合计 28 秒，却承担了“谁在看谁”的信息。</p>
+          <p>流媒体版从远景直接切到马嵬坡全景，观众仍能看懂兵变发生，但“围困者与被围困者的距离感”被抹平。院线版里前排士兵的脸部特写让空间压迫成立，流媒体版的远景把同一场面拍成了调度图。</p>
+          <p>这个差别可以复现：暂停在 1:35:40，数画面中可辨认面部的人数。院线版同位置有 7 张脸，流媒体版只有 2 张。数字不构成美学结论，但能说明删改落在哪个层面。</p>
+
+          <h3>判断二：台词替换让寿王对峙的立场变模糊，字幕错位是证据</h3>
+          <p>院线版 00:23:44 处，寿王与杨玉环长廊对话的第二句原为一段 19 字的反问，流媒体版替换成 8 字短句。替换后配音与字幕出现约 1.5 秒错位，电视播出版沿用了这一版，错位同样存在。</p>
+          <p>错位本身说明改动发生在后期混音之后，属于补录而非重拍。补录句更短、语气更平，寿王在此处的情绪从“质问”变成“确认”。后续朝堂戏里寿王的退让因此少了一层动机铺垫。</p>
+          <blockquote>
+            院线版原句保留完整反问，流媒体版只留下结果。两句都能推动剧情，但前一句让寿王的犹豫可见，后一句让犹豫消失。
+            <cite>—— 对照记录第 02 条，2026-11-06 复核</cite>
+          </blockquote>
+
+          <h3>判断三：夜宴群舞的机位删减影响的是舞台空间，不是舞蹈本身</h3>
+          <p>香港上映版 00:41:02 起删去 8 个侧面机位，正面全景保留。单看舞蹈动作，两版连贯度接近；差别在观众对舞台纵深的理解。侧面机位交代了乐师位置与廊柱间距，删掉后夜宴变成一块平面。</p>
+          <p>这一改动与片长压力有关。香港版总长 118 分钟，比内地版短 4 分钟，夜宴与片尾各让出一部分。片方未公开说明取舍标准，现有信息只能确认改动位置，不能确认决策理由。</p>
+
+          <h3>可核对结构：三组差异的对照拆解</h3>
+          <table class="check-table">
+            <caption>差异类型、可核对依据与结论强度</caption>
+            <thead>
+              <tr><th scope="col">差异点</th><th scope="col">可核对依据</th><th scope="col">结论强度</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>马嵬坡推镜</td><td>两版同机位时间码、可数面部数量</td><td>高，片源可直接比对</td></tr>
+              <tr><td>寿王台词</td><td>字幕错位 1.5 秒、配音波形差异</td><td>高，错位可复现</td></tr>
+              <tr><td>夜宴机位</td><td>港版片长、侧面机位编号</td><td>中，缺片方说明</td></tr>
+            </tbody>
+          </table>
+
+          <h3>判断四：“135 分钟导演剪辑版”缺乏发行痕迹</h3>
+          <p>检索到的三段标称 135 分钟的片段，分别来自 2015 年 6 月发布会花絮、7 月预告片和一段粉丝混剪。三段素材的服装连戏与正片不一致，其中花絮镜头里贵妃发饰方向与院线版相反。</p>
+          <p>发行层面同样没有支撑：内地公映许可证信息、香港上映记录、流媒体上线公告均未出现 135 分钟版本。把“未发行”说成“被删减”会混淆两件事——前者是版本未流通，后者是已流通版本内部存在差异。</p>
+
+          <h3>争议分层：事实、回应、转述与推测</h3>
+          <p>事实层面：四个版本片长分别为 122、118、115、112 分钟，差异点可逐条定位。回应层面：片方与导演未就删减细节公开逐条说明，只有上映前的常规宣传采访。转述层面：部分影评把片长差异归因于审查，但未给出文件或当事人原话。推测层面：夜宴机位删减可能与片长和分级市场有关，目前无直接证据。</p>
+          <p>把四层分开之后，能讨论的问题就清楚了：哪些差异有片源支撑，哪些只有说法。前者可以继续比对，后者只能等待新的发行信息。</p>
+
+          <p>一个容易被忽略的细节是片头。院线版龙标之后有 4 秒黑场，流媒体版直接进入雨声。这 4 秒不承载剧情，却让两个版本的起始时间码整体错开。所有对照如果不先对齐起点，后面每一条都会偏。</p>
+        </article>
+
+        <aside class="side" aria-label="解析侧栏">
+          <nav class="side-nav" id="sideNav" aria-label="本页目录">
+            <h3>本页目录</h3>
+            <a href="/#overview">版本概览</a>
+            <a href="/#picks">精选对照</a>
+            <a href="/#version-check">差异对照表</a>
+            <a href="/#analysis" class="active">深度解析</a>
+            <a href="/#guide">体验指南</a>
+            <a href="/#faq">常见问题</a>
+            <a href="/#comments">观众评论</a>
+            <a href="/#timeline">时间线</a>
+            <a href="/#rank">差异排行</a>
+            <a href="/#rec">相关推荐</a>
+          </nav>
+          <div class="panel">
+            <h3>核对提示</h3>
+            <p style="font-size:14.5px;color:var(--ink-soft);margin:0">先对齐片头黑场再比时间码；字幕错位比画面差异更容易复现；片源清晰度不足时标“待核”，不写进结论。</p>
+          </div>
+          <div class="panel">
+            <h3>相关标签</h3>
+            <div class="rec-row">
+              <a href="/#version-check">院线版流媒体版片长对比</a>
+              <a href="/#analysis">马嵬坡段落删减对照</a>
+              <a href="/#faq">删减原因与审查说法梳理</a>
+              <a href="/#guide">版本辨别与时间码核对方法</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 体验指南：步骤 -->
+  <section class="section" id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="kicker">GUIDE</span>
+          <h2>体验指南：四步完成一次可信的版本比对</h2>
+        </div>
+        <span class="note">适用于手持两个片源的情况</span>
+      </div>
+      <p class="sec-lead">比对不需要专业设备，但需要固定变量。下面四步按顺序做，能避开时间码错位、片源清晰度不足和字幕不同步三类常见误判。</p>
+      <div class="steps">
+        <div class="step">
+          <h4>对齐片头起点</h4>
+          <p>以龙标结束或第一帧雨声为零点，记录两版起始差。院线版与流媒体版通常差 4 秒，不对齐会让后续每条差异偏移。</p>
+        </div>
+        <div class="step">
+          <h4>先比时长再比内容</h4>
+          <p>从片头到片尾字幕结束完整计时，误差控制在 5 秒内。片长差与差异点总和应大致吻合，差距过大说明还有漏记段落。</p>
+        </div>
+        <div class="step">
+          <h4>逐条记录镜头与台词</h4>
+          <p>每条写清起止时间、镜头内容、台词原文和替换方式。只写“少了”无法复核，写上“第 2 句反问替换为 8 字短句”才能复查。</p>
+        </div>
+        <div class="step">
+          <h4>区分已确认与待核</h4>
+          <p>片源清晰度不足、字幕不同步原因不明时标“待核”。待核条目不参与计数，也不写进结论段，避免把疑问当事实。</p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:28px">
+        <figure class="figure">
+          <img src="https://picsum.photos/seed/tangversiona/720/400" width="720" height="400" loading="lazy" alt="并排摆放的两块屏幕显示同一段落的远景与近景差异" style="height:220px;object-fit:cover">
+          <figcaption>同一段落两版画面对照：远景保留调度，近景丢失面部信息。</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="https://picsum.photos/seed/tangversionb/720/400" width="720" height="400" loading="lazy" alt="笔记本上记录的时间码与镜头编号手写表格" style="height:220px;object-fit:cover">
+          <figcaption>比对记录表：时间码、镜头编号、台词原文三列缺一不可。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 对照面板 -->
+  <section class="section" id="compare">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="kicker">PANEL</span>
+          <h2>对照面板：同一段落的两版处理</h2>
+        </div>
+        <span class="note">以 1:21:10—1:24:02 为例</span>
+      </div>
+      <div class="compare">
+        <div class="side-col">
+          <h3>院线公映版</h3>
+          <div class="ver">122 分钟 · 2015 年 7 月 30 日内地公映</div>
+          <ul>
+            <li>三次视线交代完整保留</li>
+            <li>前排士兵近景两张，可辨认面部 7 人</li>
+            <li>推镜 42 秒，从城楼压到人群</li>
+            <li>环境声保留马蹄与甲胄碰撞</li>
+          </ul>
+        </div>
+        <div class="divider"><span>差异 2′32″</span></div>
+        <div class="side-col">
+          <h3>流媒体版</h3>
+          <div class="ver">112 分钟 · 2018 年后上线</div>
+          <ul>
+            <li>远景直接切入，视线交代缺失</li>
+            <li>仅保留远景，可辨认面部 2 人</li>
+            <li>推镜起点后移，实际时长缩短</li>
+            <li>环境声压低，马蹄声明显减弱</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="kicker">FAQ</span>
+          <h2>常见问题：删减、版本与核对</h2>
+        </div>
+        <span class="note">答案以片源比对为准</span>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>杨贵妃范冰冰删减到底删了哪些内容？</summary>
+          <div class="ans"><p>已确认 10 处，集中在雨夜外景近景、寿王长廊台词、夜宴侧面机位、贵妃入浴前外廊长镜、朝堂插话、马嵬坡推镜与片尾。差异以镜头和台词为单位，不是整段剧情删除，主线故事在两版中都能走通。</p></div>
+        </details>
+        <details>
+          <summary>院线版和流媒体版片长差多少？</summary>
+          <div class="ans"><p>按片头到片尾字幕结束计时，院线版 122 分钟，流媒体版 112 分钟，差 10 分钟。已确认差异点合计约 8 分 40 秒，其余差额来自片头黑场与字幕滚动速度。</p></div>
+        </details>
+        <details>
+          <summary>马嵬坡段落删减影响剧情理解吗？</summary>
+          <div class="ans"><p>主线因果不受影响，兵变结果两版一致。差别在空间压迫感与人物距离：院线版用近景交代围困关系，流媒体版用远景保留调度。看懂故事不需要前者，讨论调度时需要。</p></div>
+        </details>
+        <details>
+          <summary>“导演剪辑版 135 分钟”是真的吗？</summary>
+          <div class="ans"><p>目前没有发行记录支撑。检索到的片段来自发布会花絮、预告片和粉丝混剪，服装连戏与正片不一致。未发行与已发行版本内部删减是两件事，不能混为一谈。</p></div>
+        </details>
+        <details>
+          <summary>寿王对峙的台词为什么字幕对不上？</summary>
+          <div class="ans"><p>流媒体版替换了第二句反问，补录句更短，配音与字幕出现约 1.5 秒错位。电视播出版沿用同一替换版本，错位同样存在，可作为识别该版本的标记。</p></div>
+        </details>
+        <details>
+          <summary>香港上映版和内地版有什么不同？</summary>
+          <div class="ans"><p>香港版 118 分钟，比内地版短约 4 分钟，主要是夜宴群舞侧面机位与片尾部分。主线情节未变，舞台纵深信息减少。片方未公开说明取舍标准。</p></div>
+        </details>
+        <details>
+          <summary>怎么判断手上的片源是哪个版本？</summary>
+          <div class="ans"><p>看三个点：片头是否有龙标及后续 4 秒黑场、寿王长廊台词是否字幕错位、马嵬坡是近景还是远景。三点组合基本能区分院线、电视与流媒体版本。</p></div>
+        </details>
+        <details>
+          <summary>删减是审查导致的吗？</summary>
+          <div class="ans"><p>片方与导演未逐条说明。把片长差异直接归因于审查属于转述，目前没有文件或当事人原话支撑。夜宴机位删减可能与片长和分级市场有关，也只能算推测。</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 观众评论 -->
+  <section class="section" id="comments">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="kicker">COMMENTS</span>
+          <h2>观众评论：对具体条目的不同看法</h2>
+        </div>
+        <span class="note">示例评论 · 5 条</span>
+      </div>
+      <div class="comments">
+        <article class="comment">
+          <header>
+            <span class="avatar">林</span>
+            <span class="who">林间雨</span>
+            <span class="when">11 月 5 日</span>
+          </header>
+          <p>院线版马嵬坡那 42 秒推镜是我记得最清楚的段落。后来在流媒体重看，切得太快，前排士兵的脸全没了，感觉像看了一张站位图。</p>
+          <div class="ref">指向：差异记录第 06、07 条</div>
+          <span class="stars">★★★★☆</span>
+        </article>
+        <article class="comment">
+          <header>
+            <span class="avatar">周</span>
+            <span class="who">周午</span>
+            <span class="when">11 月 4 日</span>
+          </header>
+          <p>寿王那句台词替换我一直没注意，直到看字幕对不上才发现。补录句太短，质问变成了确认，寿王后来的退让显得没来由。</p>
+          <div class="ref">指向：差异记录第 02 条</div>
+          <span class="stars">★★★☆☆</span>
+        </article>
+        <article class="comment">
+          <header>
+            <span class="avatar">陈</span>
+            <span class="who">陈默存</span>
+            <span class="when">11 月 3 日</span>
+          </header>
+          <p>夜宴侧面机位删掉之后舞蹈反而更顺，正面全景一口气看完不跳。舞台纵深确实少了，但观感上我没觉得吃亏。</p>
+          <div class="ref">指向：差异记录第 03 条</div>
+          <span class="stars">★★★★★</span>
+        </article>
+        <article class="comment">
+          <header>
+            <span class="avatar">许</span>
+            <span class="who">许六六</span>
+            <span class="when">11 月 2 日</span>
+          </header>
+          <p>所谓 135 分钟版本我找过，下到的三段全是花絮和预告片拼的。发饰方向都对不上正片，白折腾一晚上。</p>
+          <div class="ref">指向：导演剪辑传闻条</div>
+          <span class="stars">★★☆☆☆</span>
+        </article>
+        <article class="comment">
+          <header>
+            <span class="avatar">何</span>
+            <span class="who">何岸</span>
+            <span class="when">10 月 30 日</span>
+          </header>
+          <p>片尾曲前奏延长 11 秒这个细节挺有意思，流媒体版低频更冲，戴耳机听差别明显。演职员表滚得太快，名字根本看不清。</p>
+          <div class="ref">指向：差异记录第 08、09 条</div>
+          <span class="stars">★★★☆☆</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 时间线 -->
+  <section class="section" id="timeline">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="kicker">TIMELINE</span>
+          <h2>上映与上线时间线</h2>
+        </div>
+        <span class="note">2015—2018</span>
+      </div>
+      <ol class="timeline" style="max-width:760px">
+        <li>
+          <span class="when">2015 年 7 月 30 日</span>
+          <h4>内地公映，院线版 122 分钟</h4>
+          <p>首日排片集中在历史题材档期，片头龙标后 4 秒黑场成为后续版本比对的零点参照。</p>
+        </li>
+        <li>
+          <span class="when">2015 年 8 月 13 日</span>
+          <h4>香港上映，118 分钟</h4>
+          <p>夜宴群舞侧面机位与片尾部分压缩，总长比内地版短约 4 分钟。</p>
+        </li>
+        <li>
+          <span class="when">2016 年 3 月</span>
+          <h4>电影频道播出，115 分钟</h4>
+          <p>含 5 处广告切点，片尾字幕压缩至 1 分 12 秒，正文镜头沿用院线版。</p>
+        </li>
+        <li>
+          <span class="when">2018 年之后</span>
+          <h4>流媒体上线，112 分钟</h4>
+          <p>开场雨声与结尾配乐重新处理，马嵬坡段落缩短，成为当前最常看到的版本。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 榜单 -->
+  <section class="section" id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="kicker">RANK</span>
+          <h2>差异显著度排行：按可感知程度排序</h2>
+        </div>
+        <span class="note">显著度为主观分级，依据为时长与画面信息量</span>
+      </div>
+      <div class="rank">
+        <div class="rank-row">
+          <span class="no top">01</span>
+          <div>
+            <h4>马嵬坡推镜缩短 2′32″</h4>
+            <div class="desc">近景改远景，面部数量从 7 降到 2</div>
+            <div class="bar"><i style="width:96%"></i></div>
+          </div>
+          <span class="score">时长差最大</span>
+        </div>
+        <div class="rank-row">
+          <span class="no top">02</span>
+          <div>
+            <h4>贵妃入浴前外廊长镜 32 秒变 12 秒</h4>
+            <div class="desc">空间交代被压缩，节奏明显加快</div>
+            <div class="bar"><i style="width:82%"></i></div>
+          </div>
+          <span class="score">画面信息减少</span>
+        </div>
+        <div class="rank-row">
+          <span class="no">03</span>
+          <div>
+            <h4>寿王长廊台词替换</h4>
+            <div class="desc">字幕错位 1.5 秒，最容易复现</div>
+            <div class="bar"><i style="width:70%"></i></div>
+          </div>
+          <span class="score">识别度高</span>
+        </div>
+        <div class="rank-row">
+          <span class="no">04</span>
+          <div>
+            <h4>夜宴群舞侧面机位 8 个</h4>
+            <div class="desc">港版独有差异，主线不受影响</div>
+            <div class="bar"><i style="width:54%"></i></div>
+          </div>
+          <span class="score">地域版本</span>
+        </div>
+        <div class="rank-row">
+          <span class="no">05</span>
+          <div>
+            <h4>片尾配乐前奏与字幕速度</h4>
+            <div class="desc">需戴耳机或逐帧比对才明显</div>
+            <div class="bar"><i style="width:34%"></i></div>
+          </div>
+          <span class="score">细节级</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关资讯 -->
+  <section class="section" id="news">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="kicker">NEWS</span>
+          <h2>相关资讯与档案更新</h2>
+        </div>
+        <span class="note">30 天内</span>
+      </div>
+      <div class="news">
+        <div class="news-item">
+          <div class="date">11 月<b>06</b>2026</div>
+          <div>
+            <h4>音轨差异补记完成，新增 3 条</h4>
+            <p>片头雨声、马蹄声、片尾前奏三处音量差已记录，流媒体版整体动态被压缩约 4 dB。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <div class="date">11 月<b>04</b>2026</div>
+          <div>
+            <h4>电视播出版切点表公布</h4>
+            <p>2016 年 3 月电影频道播出版共 5 处广告切点，均落在场景转换处，未切断对话。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <div class="date">11 月<b>01</b>2026</div>
+          <div>
+            <h4>“135 分钟版本”检索结论：三段素材均为拼接</h4>
+            <p>花絮、预告片与粉丝混剪各一段，服装连戏与正片不符，未发现新增叙事镜头。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <div class="date">10 月<b>28</b>2026</div>
+          <div>
+            <h4>四个版本片长重测，误差 5 秒内</h4>
+            <p>统一以片头第一帧至片尾字幕结束计时，院线 122′、港版 118′、电视 115′、流媒体 112′。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关推荐 -->
+  <section class="section" id="rec">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="kicker">RECOMMEND</span>
+          <h2>相关推荐：继续按主题查找</h2>
+        </div>
+        <span class="note">标签索引</span>
+      </div>
+      <div class="tag-cloud">
+        <a href="/#version-check">院线版流媒体版片长对比<em>10 处</em></a>
+        <a href="/#analysis">马嵬坡段落删减对照<em>时间码</em></a>
+        <a href="/#faq">删减原因与审查说法梳理<em>分层</em></a>
+        <a href="/#guide">版本辨别与时间码核对方法<em>四步</em></a>
+        <a href="/#comments">观众对删减段落的评价<em>5 条</em></a>
+        <a href="/#timeline">杨贵妃电影上映与上线时间线<em>4 节点</em></a>
+        <a href="/#rank">差异显著度排行<em>5 项</em></a>
+        <a href="/#picks">宫廷夜宴镜头机位差异<em>港版</em></a>
+        <a href="/#analysis">寿王对峙台词字幕错位<em>1.5 秒</em></a>
+      </div>
+
+      <div class="quote-card" style="margin-top:26px">
+        <p>“先对齐片头，再比片长，最后逐条记镜头。顺序反了，结论就会飘。”</p>
+        <footer>—— 版本档案整理者 郑迟，2026 年 11 月 6 日对照笔记</footer>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot" id="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>杨贵妃范冰冰删减</h3>
+        <p class="slogan">把片长、镜头与台词摆到同一张表上，差异才有讨论的起点。</p>
+      </div>
+      <div>
+        <span class="col-title">版本档案</span>
+        <ul>
+          <li><a href="/#overview">四个流通版本</a></li>
+          <li><a href="/#version-check">10 处差异对照</a></li>
+          <li><a href="/#timeline">上映与上线时间线</a></li>
+          <li><a href="/#rank">显著度排行</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="col-title">阅读指引</span>
+        <ul>
+          <li><a href="/#analysis">马嵬坡段落解析</a></li>
+          <li><a href="/#guide">时间码核对方法</a></li>
+          <li><a href="/#faq">删减常见问题</a></li>
+          <li><a href="/#comments">观众评论</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="col-title">内容说明</span>
+        <ul>
+          <li><a href="/#news">资讯与档案更新</a></li>
+          <li><a href="/#rec">相关推荐标签</a></li>
+          <li><a href="/#compare">两版对照面板</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>示例数据说明：片长、时间码与差异条目为版本比对示例，评论为示例评论；引用片源以实际流通版本为准。页面更新时间 2026-11-08，对应正文“11 月 6 日音轨补记”与“10 月 28 日片长重测”。</span>
+      <span>© 2026 杨贵妃范冰冰删减 · 版本档案整理</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到页面顶部">返回</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端菜单 */
+  var head = document.getElementById('siteHead');
+  var menuBtn = document.getElementById('menuBtn');
+  if(menuBtn && head){
+    menuBtn.addEventListener('click',function(){
+      var open = head.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuBtn.textContent = open ? '收起' : '菜单';
+    });
+    document.getElementById('mainNav').addEventListener('click',function(e){
+      if(e.target.tagName === 'A' && window.innerWidth <= 1020){
+        head.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.textContent = '菜单';
+      }
+    });
+  }
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('toTop');
+  var ticking = false;
+  function onScroll(){
+    if(!ticking){
+      window.requestAnimationFrame(function(){
+        if(window.scrollY > 620){ toTop.classList.add('on'); } else { toTop.classList.remove('on'); }
+        updateActive();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  /* 侧栏滚动高亮 */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var sections = navLinks.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  });
+  function updateActive(){
+    var pos = window.scrollY + 140;
+    var current = -1;
+    sections.forEach(function(sec,i){
+      if(sec && sec.offsetTop <= pos) current = i;
+    });
+    if(current < 0) current = 0;
+    navLinks.forEach(function(a,i){
+      if(i === current){ a.classList.add('active'); } else { a.classList.remove('active'); }
+    });
+  }
+
+  /* 本地搜索 */
+  var searchInput = document.getElementById('siteSearch');
+  var resultBox = document.getElementById('searchResult');
+  var index = [
+    {t:'版本概览：四个流通版本',u:'/#overview',k:'院线 122 分钟 香港 118 分钟 电视 115 分钟 流媒体 112 分钟'},
+    {t:'院线公映版 122 分钟',u:'/#overview',k:'2015 年 7 月 30 日 龙标 黑场'},
+    {t:'香港上映版 118 分钟',u:'/#overview',k:'2015 年 8 月 13 日 夜宴侧面机位'},
+    {t:'电视播出版 115 分钟',u:'/#overview',k:'电影频道 2016 年 3 月 广告切点'},
+    {t:'流媒体版 112 分钟',u:'/#overview',k:'2018 年 片头雨声 配乐重混'},
+    {t:'导演剪辑版传闻核实',u:'/#analysis',k:'135 分钟 花絮 预告片 混剪'},
+    {t:'马嵬坡兵变推镜',u:'/#version-check',k:'01:38:12 42 秒 近景 远景 面部数量'},
+    {t:'寿王对峙台词替换',u:'/#version-check',k:'00:23:44 字幕错位 1.5 秒 补录'},
+    {t:'夜宴群舞侧面机位',u:'/#version-check',k:'00:41:02 8 个机位 港版'},
+    {t:'贵妃入浴前外廊长镜',u:'/#version-check',k:'00:58:30 32 秒 缩短 12 秒'},
+    {t:'片尾配乐重混与字幕速度',u:'/#version-check',k:'01:52:26 演职员表 压缩'},
+    {t:'版本辨别与时间码核对方法',u:'/#guide',k:'对齐片头 计时 记录 待核'},
+    {t:'删减原因与审查说法梳理',u:'/#faq',k:'事实 回应 转述 推测'},
+    {t:'观众评论与条目指向',u:'/#comments',k:'林间雨 周午 陈默存 许六六 何岸'},
+    {t:'上映与上线时间线',u:'/#timeline',k:'2015 2016 2018 四个节点'},
+    {t:'差异显著度排行',u:'/#rank',k:'五档 时长差 识别度 细节级'},
+    {t:'相关资讯与档案更新',u:'/#news',k:'11 月 6 日 11 月 4 日 11 月 1 日 10 月 28 日'}
+  ];
+  function renderSearch(q){
+    var key = q.trim();
+    if(!key){ resultBox.classList.remove('on'); resultBox.innerHTML=''; return; }
+    var hits = index.filter(function(item){
+      return (item.t + item.k).toLowerCase().indexOf(key.toLowerCase()) > -1;
+    }).slice(0,8);
+    if(hits.length === 0){
+      resultBox.innerHTML = '<div class="none">没有找到与“'+ key.replace(/</g,'&lt;') +'”相关的条目，可试试“马嵬坡”“122 分钟”“寿王”。</div>';
+    }else{
+      resultBox.innerHTML = hits.map(function(h){
+        return '<a href="'+h.u+'">'+h.t+'</a>';
+      }).join('');
+    }
+    resultBox.classList.add('on');
+  }
+  if(searchInput){
+    searchInput.addEventListener('input',function(){ renderSearch(this.value); });
+    searchInput.addEventListener('keydown',function(e){
+      if(e.key === 'Escape'){ this.value=''; renderSearch(''); this.blur(); }
+    });
+    document.addEventListener('click',function(e){
+      if(!e.target.closest('.search-box')) resultBox.classList.remove('on');
+    });
+    resultBox.addEventListener('click',function(e){
+      if(e.target.tagName === 'A'){ resultBox.classList.remove('on'); searchInput.value=''; }
+    });
+  }
+
+  /* 平滑滚动，为吸顶预留偏移 */
+  document.addEventListener('click',function(e){
+    var a = e.target.closest('a[href^="/#"]');
+    if(!a) return;
+    var id = a.getAttribute('href').replace('/#','');
+    var target = document.getElementById(id);
+    if(!target) return;
+    e.preventDefault();
+    var headH = document.getElementById('announce').offsetHeight + head.offsetHeight + 12;
+    var y = target.getBoundingClientRect().top + window.scrollY - headH;
+    window.scrollTo({top: y, behavior:'smooth'});
+    if(window.innerWidth <= 1020 && head.classList.contains('open')){
+      head.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+      menuBtn.textContent = '菜单';
+    }
+  });
+
+  updateActive();
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"杨贵妃范冰冰删减",
+  "description":"电影《王朝的女人·杨贵妃》院线版、港版、电视版与流媒体版的镜头与台词差异档案。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"杨贵妃范冰冰删减到底删了哪些内容？","acceptedAnswer":{"@type":"Answer","text":"已确认 10 处，集中在雨夜外景近景、寿王长廊台词、夜宴侧面机位、贵妃入浴前外廊长镜、朝堂插话、马嵬坡推镜与片尾。差异以镜头和台词为单位，不是整段剧情删除。"}},
+    {"@type":"Question","name":"院线版和流媒体版片长差多少？","acceptedAnswer":{"@type":"Answer","text":"按片头到片尾字幕结束计时，院线版 122 分钟，流媒体版 112 分钟，差 10 分钟。已确认差异点合计约 8 分 40 秒。"}},
+    {"@type":"Question","name":"马嵬坡段落删减影响剧情理解吗？","acceptedAnswer":{"@type":"Answer","text":"主线因果不受影响，兵变结果两版一致。差别在空间压迫感与人物距离：院线版用近景交代围困关系，流媒体版用远景保留调度。"}},
+    {"@type":"Question","name":"“导演剪辑版 135 分钟”是真的吗？","acceptedAnswer":{"@type":"Answer","text":"目前没有发行记录支撑。检索到的片段来自发布会花絮、预告片和粉丝混剪，服装连戏与正片不一致。"}},
+    {"@type":"Question","name":"寿王对峙的台词为什么字幕对不上？","acceptedAnswer":{"@type":"Answer","text":"流媒体版替换了第二句反问，补录句更短，配音与字幕出现约 1.5 秒错位。电视播出版沿用同一替换版本。"}},
+    {"@type":"Question","name":"香港上映版和内地版有什么不同？","acceptedAnswer":{"@type":"Answer","text":"香港版 118 分钟，比内地版短约 4 分钟，主要是夜宴群舞侧面机位与片尾部分，主线情节未变。"}},
+    {"@type":"Question","name":"怎么判断手上的片源是哪个版本？","acceptedAnswer":{"@type":"Answer","text":"看三个点：片头是否有龙标及后续 4 秒黑场、寿王长廊台词是否字幕错位、马嵬坡是近景还是远景。"}},
+    {"@type":"Question","name":"删减是审查导致的吗？","acceptedAnswer":{"@type":"Answer","text":"片方与导演未逐条说明。把片长差异直接归因于审查属于转述，目前没有文件或当事人原话支撑。"}}
+  ]
+}
+</script>
+</body>
+  </html>
